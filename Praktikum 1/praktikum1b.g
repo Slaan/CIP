@@ -1,7 +1,8 @@
 grammar praktikum1b;
 
 
-start	:	 PROGRAM
+start	
+	:	 PROGRAM
 		 deklaration
 		 BEGIN
 		 anweisung
@@ -10,13 +11,17 @@ start	:	 PROGRAM
 PROGRAM       
 	:	 'program';
 
-BEGIN 	:	'begin';
+BEGIN 	
+	:	'begin';
 
-END	:	'end';
+END	
+	:	'end';
 
-EQUALS	: 	'=';
+EQUALS	
+	: 	'=';
 
-BOOLEAN 	:	'true'|'false';
+BOOLEAN 	
+	:	'true'|'false';
 
 SEMIKOLON     
 	:	';';
@@ -30,27 +35,32 @@ anweisung
 wertzuweisung
 	:	 ID EQUALS (arithExpr|STRING|vergleich);
 
-arithExpr
-	:	INT (arithSubExpr)* EQUALS INT;
-	
-arithSubExpr
-	:	ARITHZEICHEN INT;
-	
-ifanweisung 	:	'if' vergleich 'then' anweisung ('else' anweisung)? 'fi';
+ifanweisung 	
+	:	'if' vergleich 'then' anweisung ('else' anweisung)? 'fi';
 
-whileanweisung	:	'while' vergleich 'do' anweisung 'od';
+whileanweisung	
+	:	'while' vergleich 'do' anweisung 'od';
 
-read	:	'read' '('ID')';
+read	
+	:	'read' '('ID')';
 
-print	:	'println' '('(arithExpr|STRING)')';
+print
+	:	'println' '('(arithExpr|STRING)')';
 
-vergleich	:	(STRING|arithExpr) VERGLEICHSZEICHEN (STRING|arithExpr);
+vergleich
+	:	(STRING|arithExpr) VERGLEICHSZEICHEN (STRING|arithExpr);
 
 fragment VERGLEICHSFRAG 
 	:	('<'|'>'|'='|'>='|'<=');
 	
 VERGLEICHSZEICHEN 
 	:	 VERGLEICHSFRAG;
+
+arithExpr
+	:	INT (arithSubExpr)* EQUALS INT;
+	
+arithSubExpr
+	:	ARITHZEICHEN INT;
 	
 ARITHZEICHEN 
 	:	ARITHFRAG;
@@ -58,11 +68,11 @@ ARITHZEICHEN
 fragment ARITHFRAG
 	:	('+'|'-'|'*'|'/');
 
-ID  :	('a'..'z'|'A'..'Z'|'_') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*
-    ;
+ID  
+	:	('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
 
-INT :	'0'..'9'+
-    ;
+INT 
+	:	'0'..'9'+;
 
 FLOAT
     :   ('0'..'9')+ '.' ('0'..'9')* EXPONENT?
@@ -72,7 +82,7 @@ FLOAT
 
 COMMENT
     :   '/*' ( options {greedy=false;} : . )* '*/' {$channel=HIDDEN;}
-    ;
+	;
 
 WS  :   ( ' '
         | '\t'
