@@ -1,0 +1,15 @@
+program
+integer a,b;
+boolean c,d;
+real 	e_12;
+string	hallo;
+begin
+a := 123;
+3+(5+2)*6/2+9;
+println('hallo');
+while 
+	5>3;
+do 
+	read(hallo); 
+od;
+end

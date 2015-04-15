@@ -1,5 +1,0 @@
-program
-begin
-if 2+3=5 then println('hallo') fi
-5+6=11
-end
