@@ -36,10 +36,10 @@ deklaration
 	:	DEKLARATIONSSYMBOL ID (KOMMA ID)* SEMIKOLON;
 	
 anweisung 
-	:	(wertzuweisung|arith1|ifanweisung|whileanweisung|read|print|vergleich)*;
+	:	(wertzuweisung|arithExpr|ifanweisung|whileanweisung|read|print|vergleich)*;
 	
 wertzuweisung
-	:	 ID WERTZUWEISUNG (INT|arith1|STRING|vergleich) SEMIKOLON;
+	:	 ID WERTZUWEISUNG (INT|arithExpr|STRING|vergleich) SEMIKOLON;
 
 ifanweisung 	
 	:	'if' vergleich 'then' anweisung ('else' anweisung)? 'fi'SEMIKOLON;
@@ -51,7 +51,7 @@ read
 	:	'read' '('ID')'SEMIKOLON;
 
 print
-	:	'println' '('(arith1|STRING)')'SEMIKOLON;
+	:	'println' '('(arithExpr|STRING)')'SEMIKOLON;
 
 vergleich
 	:	(STRING|INT|FLOAT|BOOLEAN) VERGLEICHSZEICHEN (STRING|INT|FLOAT|BOOLEAN)SEMIKOLON;
@@ -62,25 +62,20 @@ fragment VERGLEICHSFRAG
 VERGLEICHSZEICHEN 
 	:	 VERGLEICHSFRAG;
 
- arith1	:	arithExpr SEMIKOLON;
+ arithExpr	:	arith1 SEMIKOLON;
 
-arithExpr
-	:	(INT|FLOAT|klammerrule) addsubrule;
+arith1
+	:	arith2 (ADDSUBSYM arith2)*;	
 
-addsubrule
-	:	(ADDSUBSYM arithExpr)* muldivrule;
+arith2
+	:	arith3 (MULDIVSYM arith3)*;
 
-muldivrule
-	:	(MULDIVSYM arithExpr)*;
+arith3
+	:	(INT|FLOAT|klammerrule|ID);
 
 klammerrule
-	:	 '('arithExpr')';
+	:	 '('arith1')';
 	
-	
-
-arith_expression : term ( ADDSUBSYM term)*;
-term : factor ( MULDIVSYM factor)*;
-factor : ((INT|FLOAT) | ID | ('(' arith_expression ')'));	
 	
 ADDSUBSYM
 	:	ADDFRAG;
@@ -101,7 +96,7 @@ ID
 	:	('a'..'z'|'A'..'Z') ('a'..'z'|'A'..'Z'|'0'..'9'|'_')*;
 
 INT 
-	:	'0'..'9'+;
+	:	('-')?'0'..'9'+;
 
 FLOAT
     :   ('0'..'9')+ '.' ('0'..'9')* 
