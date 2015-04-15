@@ -5,7 +5,7 @@ start
 	:	 PROGRAM
 		 deklaration*
 		 BEGIN
-		 anweisung
+		 anweisung_start*
 		 END;
 
 PROGRAM       
@@ -34,33 +34,33 @@ DEKLARATIONSSYMBOL
 
 deklaration    
 	:	DEKLARATIONSSYMBOL ID (KOMMA ID)* SEMIKOLON;
+
+anweisung_start
+	:	anweisung SEMIKOLON;
 	
 anweisung 
-	:	(wertzuweisung|arithExpr|ifanweisung|whileanweisung|read|print|vergleich)*;
+	:	(wertzuweisung|arith1|ifanweisung|whileanweisung|read|print|vergleich);
 	
 wertzuweisung
-	:	 ID WERTZUWEISUNG (INT|arithExpr|STRING|vergleich) SEMIKOLON;
+	:	 ID WERTZUWEISUNG (arith1|STRING|vergleich);
 
 ifanweisung 	
-	:	'if' vergleich 'then' anweisung ('else' anweisung)? 'fi'SEMIKOLON;
+	:	'if' vergleich 'then' anweisung_start ('else' anweisung_start)? 'fi';
 
 whileanweisung	
-	:	'while' vergleich 'do' anweisung 'od'SEMIKOLON;
+	:	'while' vergleich 'do' anweisung_start 'od';
 
 read	
-	:	'read' '('ID')'SEMIKOLON;
+	:	'read' '('ID')';
 
 print
-	:	'println' '('(arithExpr|STRING)')'SEMIKOLON;
+	:	'println' '('(arith1|STRING)')';
 
 vergleich
-	:	(STRING|INT|FLOAT|BOOLEAN) VERGLEICHSZEICHEN (STRING|INT|FLOAT|BOOLEAN)SEMIKOLON;
-
-fragment VERGLEICHSFRAG 
-	:	('<'|'>'|'='|'>='|'<='|'<>');
+	:	(STRING|INT|FLOAT|BOOLEAN) VERGLEICHSZEICHEN (STRING|INT|FLOAT|BOOLEAN);
 	
 VERGLEICHSZEICHEN 
-	:	 VERGLEICHSFRAG;
+	:	 ('<'|'>'|'='|'>='|'<='|'<>');
 
  arithExpr	:	arith1 SEMIKOLON;
 
@@ -71,22 +71,12 @@ arith2
 	:	arith3 (MULDIVSYM arith3)*;
 
 arith3
-	:	(INT|FLOAT|klammerrule|ID);
-
-klammerrule
-	:	 '('arith1')';
-	
+	:	(INT|FLOAT|'('arith1')'|ID);
 	
 ADDSUBSYM
-	:	ADDFRAG;
-
-fragment ADDFRAG
 	:	'+'|'-';
 
 MULDIVSYM
-	:	MULFRAG;
-
-fragment MULFRAG
 	:	'*'|'/';
 	
 KOMMA
