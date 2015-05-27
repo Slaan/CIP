@@ -3,9 +3,18 @@ integer a,b;
 boolean c,d;
 real 	e_12;
 string	hallo;
+integer z;
 begin
 a := 123;
 3+(5+2)*6/-2+9;
 println('hallo');
-while 5>3 do read(hallo); od;
+while 5>3 do read(hallo); 
+od;
+if 2<1 
+then c := 'test1'; 
+fi;
+if 4>3 
+then c := 'test2'; println('tschuess'); 4*3; 
+else println('hallo'); 
+fi;
 end

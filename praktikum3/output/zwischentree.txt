@@ -1,0 +1,1 @@
+(= (+ (WORD A S D F) (WORD Q W E R)) (WORD Q W E R T)) (= (- (WORD A S D D) (WORD Z P L K)) (WORD N N M A)) (= (+ (WORD A S D F) (WORD Q W E R)) (WORD X Y C C)) (= (- (WORD A S D F) (WORD A S D D)) (WORD A S D F)) (= (- (WORD Q W E R) (WORD Z P L K)) (WORD Q W E R)) (= (- (WORD Q W E R T) (WORD N N M A)) (WORD X Y C C))

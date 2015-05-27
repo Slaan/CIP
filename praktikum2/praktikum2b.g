@@ -17,7 +17,7 @@ start
 dekla	:	deklaration* -> ^(DEKLA deklaration*);
 
 deklaration    
-	:	DEKLARATIONSSYMBOL ID (KOMMA ID)* SEMIKOLON -> ^(DEKLARATIONSSYMBOL ID*);
+	:	DEKLARATIONSSYMBOL ID (KOMMA ID)* SEMIKOLON -> ^(DEKLARATIONSSYMBOL ID)*;
 
 anweisung_start
 	:	anweisung* -> ^(ANWEIS anweisung*);
@@ -32,7 +32,8 @@ zuweisung
 	:	(arith1|STRING|vergleich);
 
 ifanweisung 	
-	:	'if' vergleich 'then' anweisung_start ('else' anweisung_start)? 'fi' -> ^('if' vergleich anweisung_start);
+	:	'if' vergleich 'then' anweisung1=anweisung_start ('else' anweisung2=anweisung_start)? 'fi' -> 
+		^('if' vergleich ^('then' $anweisung1) (^('else' $anweisung2))?);
 
 whileanweisung	
 	:	'while' vergleich 'do' anweisung_start 'od' -> ^('while' vergleich anweisung_start);

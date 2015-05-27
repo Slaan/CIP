@@ -8,6 +8,20 @@ tokens {
 	WORD;
 }
 
+start_all
+	:	wort1=word ARITHEXPR wort2=word EQUALS wort3=word
+		ARITHEXPR ARITHEXPR ARITHEXPR
+		wort4=word ARITHEXPR wort5=word EQUALS wort6=word
+		EQUALS EQUALS EQUALS
+		wort7=word ARITHEXPR wort8=word EQUALS wort9=word
+		-> ^(EQUALS ^(ARITHEXPR $wort1 $wort2) $wort3)
+		^(EQUALS ^(ARITHEXPR $wort4 $wort5) $wort6)
+		^(EQUALS ^(ARITHEXPR $wort7 $wort8) $wort9)
+		^(EQUALS ^(ARITHEXPR $wort1 $wort4) $wort7)
+		^(EQUALS ^(ARITHEXPR $wort2 $wort5) $wort8)
+		^(EQUALS ^(ARITHEXPR $wort3 $wort6) $wort9)
+		;
+
 start 	: 	calcarithexpr equalsmultexpr calcZeile -> ^(EQUALSMULTT calcarithexpr calcZeile);
 
 calcZeile 	:	arithsingleexpr EQUALS word -> ^(EQUALS arithsingleexpr word);
