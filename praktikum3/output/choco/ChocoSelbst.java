@@ -30,6 +30,10 @@ public class ChocoSelbst {
     IntegerVariable uber4 = Choco.makeIntVar("uber4",0,1,Options.V_ENUM);
     IntegerVariable uber5 = Choco.makeIntVar("uber5",0,1,Options.V_ENUM);
     
+    // donald
+    // gerald
+    // robert
+    
     model.addConstraint(Choco.eq(                  Choco.plus(d, d),  Choco.plus(t, Choco.mult(10, uber1))));
     model.addConstraint(Choco.eq(Choco.plus(uber1, Choco.plus(l, l)), Choco.plus(r, Choco.mult(10, uber2))));
     model.addConstraint(Choco.eq(Choco.plus(uber2, Choco.plus(a, a)), Choco.plus(e, Choco.mult(10, uber3))));

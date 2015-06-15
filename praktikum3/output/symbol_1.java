@@ -19,40 +19,19 @@ public class symbol_1 {
             "UTF8"));
     CommonTokenStream tokens = new CommonTokenStream(lex);
     praktikum2aParser g = new praktikum2aParser(tokens);
+    System.out.println(tokens);
     try {
-      praktikum2aParser.start_all_return grammar1_return = g.start_all();
-      CommonTree tree1 = (CommonTree) grammar1_return.getTree();
-      writetree(tree1);
-      System.out.println(tree1.toStringTree() + "\r\n");
-      TreeNodeStream symbolNodeStream = new CommonTreeNodeStream(tree1);
-      
-      minusgenLexer minuslex = new minusgenLexer(new ANTLRFileStream("./zwischentree.txt"));
-      CommonTokenStream minusgentokens = new CommonTokenStream(minuslex);
-      minusgenParser minusgenpars = new minusgenParser(minusgentokens);
-      minusgenParser.start_return grammar2_return = minusgenpars.start();
-      CommonTree tree2 = (CommonTree) grammar2_return.getTree();
-      System.out.println(tree2.toStringTree());
-      
-//      CommonTokenStream asf = (CommonTokenStream) symbolNodeStream.getTokenStream();
-//      
-//      minusgenParser umwandlung = new minusgenParser(asf);
-//      minusgenParser.start_return grammar2_return = umwandlung.start();
-//      CommonTree tree2 = (CommonTree) grammar2_return.getTree();      
-    } catch (RecognitionException e) {
-      e.printStackTrace();
-    }
-  }
+      praktikum2aParser.start_all_return r = g.start_all();
+      CommonTree tree1 = (CommonTree) r.getTree();
+      System.out.println(tree1.toStringTree());
+      CommonTreeNodeStream nodes = new CommonTreeNodeStream(r.getTree());
 
-  private static void writetree(CommonTree tree1) {
-    File dir = new File("./");
-    String filename = "zwischentree.txt";
-    File file = new File(dir,filename);
-    try {
-      FileWriter fw = new FileWriter(file);
-      fw.write(tree1.toStringTree());
-      fw.close();
-    } catch (IOException e) {
-      // TODO Auto-generated catch block
+      minusgen umwandler = new minusgen(nodes);
+      minusgen.start_return result = umwandler.start();
+      CommonTree tree2 = (CommonTree) result.getTree();
+      System.out.println(tree2.toStringTree());
+            
+    } catch (RecognitionException e) {
       e.printStackTrace();
     }
   }

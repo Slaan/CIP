@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home/slaan/git/cip/praktikum3/praktikum2a.g 2015-05-27 17:09:11
+// $ANTLR 3.4 /home/slaan/git/cip/praktikum3/praktikum2a.g 2015-06-15 15:35:08
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -11,43 +11,44 @@ import org.antlr.runtime.tree.*;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class praktikum2aParser extends Parser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ARITHEXPR", "ARITHMULTT", "A_LET", "B_LET", "COMMENT", "C_LET", "D_LET", "EQUALS", "EQUALSMULTT", "E_LET", "F_LET", "G_LET", "H_LET", "I_LET", "J_LET", "K_LET", "L_LET", "M_LET", "N_LET", "O_LET", "P_LET", "Q_LET", "R_LET", "S_LET", "T_LET", "U_LET", "V_LET", "WORD", "WS", "W_LET", "X_LET", "Y_LET", "Z_LET"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ARITHMULTT", "A_LET", "B_LET", "COMMENT", "C_LET", "D_LET", "EQUALS", "EQUALSMULTT", "E_LET", "F_LET", "G_LET", "H_LET", "I_LET", "J_LET", "K_LET", "L_LET", "MINUS", "M_LET", "N_LET", "O_LET", "PLUS", "P_LET", "Q_LET", "R_LET", "S_LET", "T_LET", "U_LET", "V_LET", "WORD", "WS", "W_LET", "X_LET", "Y_LET", "Z_LET"
     };
 
     public static final int EOF=-1;
-    public static final int ARITHEXPR=4;
-    public static final int ARITHMULTT=5;
-    public static final int A_LET=6;
-    public static final int B_LET=7;
-    public static final int COMMENT=8;
-    public static final int C_LET=9;
-    public static final int D_LET=10;
-    public static final int EQUALS=11;
-    public static final int EQUALSMULTT=12;
-    public static final int E_LET=13;
-    public static final int F_LET=14;
-    public static final int G_LET=15;
-    public static final int H_LET=16;
-    public static final int I_LET=17;
-    public static final int J_LET=18;
-    public static final int K_LET=19;
-    public static final int L_LET=20;
+    public static final int ARITHMULTT=4;
+    public static final int A_LET=5;
+    public static final int B_LET=6;
+    public static final int COMMENT=7;
+    public static final int C_LET=8;
+    public static final int D_LET=9;
+    public static final int EQUALS=10;
+    public static final int EQUALSMULTT=11;
+    public static final int E_LET=12;
+    public static final int F_LET=13;
+    public static final int G_LET=14;
+    public static final int H_LET=15;
+    public static final int I_LET=16;
+    public static final int J_LET=17;
+    public static final int K_LET=18;
+    public static final int L_LET=19;
+    public static final int MINUS=20;
     public static final int M_LET=21;
     public static final int N_LET=22;
     public static final int O_LET=23;
-    public static final int P_LET=24;
-    public static final int Q_LET=25;
-    public static final int R_LET=26;
-    public static final int S_LET=27;
-    public static final int T_LET=28;
-    public static final int U_LET=29;
-    public static final int V_LET=30;
-    public static final int WORD=31;
-    public static final int WS=32;
-    public static final int W_LET=33;
-    public static final int X_LET=34;
-    public static final int Y_LET=35;
-    public static final int Z_LET=36;
+    public static final int PLUS=24;
+    public static final int P_LET=25;
+    public static final int Q_LET=26;
+    public static final int R_LET=27;
+    public static final int S_LET=28;
+    public static final int T_LET=29;
+    public static final int U_LET=30;
+    public static final int V_LET=31;
+    public static final int WORD=32;
+    public static final int WS=33;
+    public static final int W_LET=34;
+    public static final int X_LET=35;
+    public static final int Y_LET=36;
+    public static final int Z_LET=37;
 
     // delegates
     public Parser[] getDelegates() {
@@ -83,7 +84,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "start_all"
-    // /home/slaan/git/cip/praktikum3/praktikum2a.g:11:1: start_all : wort1= word ARITHEXPR wort2= word EQUALS wort3= word ARITHEXPR ARITHEXPR ARITHEXPR wort4= word ARITHEXPR wort5= word EQUALS wort6= word EQUALS EQUALS EQUALS wort7= word ARITHEXPR wort8= word EQUALS wort9= word -> ^( EQUALS ^( ARITHEXPR $wort1 $wort2) $wort3) ^( EQUALS ^( ARITHEXPR $wort4 $wort5) $wort6) ^( EQUALS ^( ARITHEXPR $wort7 $wort8) $wort9) ^( EQUALS ^( ARITHEXPR $wort1 $wort4) $wort7) ^( EQUALS ^( ARITHEXPR $wort2 $wort5) $wort8) ^( EQUALS ^( ARITHEXPR $wort3 $wort6) $wort9) ;
+    // /home/slaan/git/cip/praktikum3/praktikum2a.g:11:1: start_all : wort1= word arithexpr wort2= word EQUALS wort3= word arithexpr arithexpr arithexpr wort4= word arithexpr wort5= word EQUALS wort6= word EQUALS EQUALS EQUALS wort7= word arithexpr wort8= word EQUALS wort9= word -> ^( EQUALS ^( arithexpr $wort1 $wort2) $wort3) ^( EQUALS ^( arithexpr $wort4 $wort5) $wort6) ^( EQUALS ^( arithexpr $wort7 $wort8) $wort9) ^( EQUALS ^( arithexpr $wort1 $wort4) $wort7) ^( EQUALS ^( arithexpr $wort2 $wort5) $wort8) ^( EQUALS ^( arithexpr $wort3 $wort6) $wort9) ;
     public final praktikum2aParser.start_all_return start_all() throws RecognitionException {
         praktikum2aParser.start_all_return retval = new praktikum2aParser.start_all_return();
         retval.start = input.LT(1);
@@ -91,17 +92,11 @@ public TreeAdaptor getTreeAdaptor() {
 
         Object root_0 = null;
 
-        Token ARITHEXPR1=null;
         Token EQUALS2=null;
-        Token ARITHEXPR3=null;
-        Token ARITHEXPR4=null;
-        Token ARITHEXPR5=null;
-        Token ARITHEXPR6=null;
         Token EQUALS7=null;
         Token EQUALS8=null;
         Token EQUALS9=null;
         Token EQUALS10=null;
-        Token ARITHEXPR11=null;
         Token EQUALS12=null;
         praktikum2aParser.word_return wort1 =null;
 
@@ -121,25 +116,31 @@ public TreeAdaptor getTreeAdaptor() {
 
         praktikum2aParser.word_return wort9 =null;
 
+        praktikum2aParser.arithexpr_return arithexpr1 =null;
 
-        Object ARITHEXPR1_tree=null;
+        praktikum2aParser.arithexpr_return arithexpr3 =null;
+
+        praktikum2aParser.arithexpr_return arithexpr4 =null;
+
+        praktikum2aParser.arithexpr_return arithexpr5 =null;
+
+        praktikum2aParser.arithexpr_return arithexpr6 =null;
+
+        praktikum2aParser.arithexpr_return arithexpr11 =null;
+
+
         Object EQUALS2_tree=null;
-        Object ARITHEXPR3_tree=null;
-        Object ARITHEXPR4_tree=null;
-        Object ARITHEXPR5_tree=null;
-        Object ARITHEXPR6_tree=null;
         Object EQUALS7_tree=null;
         Object EQUALS8_tree=null;
         Object EQUALS9_tree=null;
         Object EQUALS10_tree=null;
-        Object ARITHEXPR11_tree=null;
         Object EQUALS12_tree=null;
-        RewriteRuleTokenStream stream_ARITHEXPR=new RewriteRuleTokenStream(adaptor,"token ARITHEXPR");
         RewriteRuleTokenStream stream_EQUALS=new RewriteRuleTokenStream(adaptor,"token EQUALS");
+        RewriteRuleSubtreeStream stream_arithexpr=new RewriteRuleSubtreeStream(adaptor,"rule arithexpr");
         RewriteRuleSubtreeStream stream_word=new RewriteRuleSubtreeStream(adaptor,"rule word");
         try {
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:12:2: (wort1= word ARITHEXPR wort2= word EQUALS wort3= word ARITHEXPR ARITHEXPR ARITHEXPR wort4= word ARITHEXPR wort5= word EQUALS wort6= word EQUALS EQUALS EQUALS wort7= word ARITHEXPR wort8= word EQUALS wort9= word -> ^( EQUALS ^( ARITHEXPR $wort1 $wort2) $wort3) ^( EQUALS ^( ARITHEXPR $wort4 $wort5) $wort6) ^( EQUALS ^( ARITHEXPR $wort7 $wort8) $wort9) ^( EQUALS ^( ARITHEXPR $wort1 $wort4) $wort7) ^( EQUALS ^( ARITHEXPR $wort2 $wort5) $wort8) ^( EQUALS ^( ARITHEXPR $wort3 $wort6) $wort9) )
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:12:4: wort1= word ARITHEXPR wort2= word EQUALS wort3= word ARITHEXPR ARITHEXPR ARITHEXPR wort4= word ARITHEXPR wort5= word EQUALS wort6= word EQUALS EQUALS EQUALS wort7= word ARITHEXPR wort8= word EQUALS wort9= word
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:12:2: (wort1= word arithexpr wort2= word EQUALS wort3= word arithexpr arithexpr arithexpr wort4= word arithexpr wort5= word EQUALS wort6= word EQUALS EQUALS EQUALS wort7= word arithexpr wort8= word EQUALS wort9= word -> ^( EQUALS ^( arithexpr $wort1 $wort2) $wort3) ^( EQUALS ^( arithexpr $wort4 $wort5) $wort6) ^( EQUALS ^( arithexpr $wort7 $wort8) $wort9) ^( EQUALS ^( arithexpr $wort1 $wort4) $wort7) ^( EQUALS ^( arithexpr $wort2 $wort5) $wort8) ^( EQUALS ^( arithexpr $wort3 $wort6) $wort9) )
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:12:4: wort1= word arithexpr wort2= word EQUALS wort3= word arithexpr arithexpr arithexpr wort4= word arithexpr wort5= word EQUALS wort6= word EQUALS EQUALS EQUALS wort7= word arithexpr wort8= word EQUALS wort9= word
             {
             pushFollow(FOLLOW_word_in_start_all38);
             wort1=word();
@@ -148,9 +149,12 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_word.add(wort1.getTree());
 
-            ARITHEXPR1=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_start_all40);  
-            stream_ARITHEXPR.add(ARITHEXPR1);
+            pushFollow(FOLLOW_arithexpr_in_start_all40);
+            arithexpr1=arithexpr();
 
+            state._fsp--;
+
+            stream_arithexpr.add(arithexpr1.getTree());
 
             pushFollow(FOLLOW_word_in_start_all44);
             wort2=word();
@@ -170,17 +174,26 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_word.add(wort3.getTree());
 
-            ARITHEXPR3=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_start_all54);  
-            stream_ARITHEXPR.add(ARITHEXPR3);
+            pushFollow(FOLLOW_arithexpr_in_start_all54);
+            arithexpr3=arithexpr();
 
+            state._fsp--;
 
-            ARITHEXPR4=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_start_all56);  
-            stream_ARITHEXPR.add(ARITHEXPR4);
+            stream_arithexpr.add(arithexpr3.getTree());
 
+            pushFollow(FOLLOW_arithexpr_in_start_all56);
+            arithexpr4=arithexpr();
 
-            ARITHEXPR5=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_start_all58);  
-            stream_ARITHEXPR.add(ARITHEXPR5);
+            state._fsp--;
 
+            stream_arithexpr.add(arithexpr4.getTree());
+
+            pushFollow(FOLLOW_arithexpr_in_start_all58);
+            arithexpr5=arithexpr();
+
+            state._fsp--;
+
+            stream_arithexpr.add(arithexpr5.getTree());
 
             pushFollow(FOLLOW_word_in_start_all64);
             wort4=word();
@@ -189,9 +202,12 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_word.add(wort4.getTree());
 
-            ARITHEXPR6=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_start_all66);  
-            stream_ARITHEXPR.add(ARITHEXPR6);
+            pushFollow(FOLLOW_arithexpr_in_start_all66);
+            arithexpr6=arithexpr();
 
+            state._fsp--;
+
+            stream_arithexpr.add(arithexpr6.getTree());
 
             pushFollow(FOLLOW_word_in_start_all70);
             wort5=word();
@@ -230,9 +246,12 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_word.add(wort7.getTree());
 
-            ARITHEXPR11=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_start_all92);  
-            stream_ARITHEXPR.add(ARITHEXPR11);
+            pushFollow(FOLLOW_arithexpr_in_start_all92);
+            arithexpr11=arithexpr();
 
+            state._fsp--;
+
+            stream_arithexpr.add(arithexpr11.getTree());
 
             pushFollow(FOLLOW_word_in_start_all96);
             wort8=word();
@@ -253,7 +272,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_word.add(wort9.getTree());
 
             // AST REWRITE
-            // elements: wort4, ARITHEXPR, ARITHEXPR, wort9, EQUALS, ARITHEXPR, wort7, EQUALS, EQUALS, wort5, wort3, ARITHEXPR, wort1, wort2, wort7, wort6, wort1, wort8, ARITHEXPR, wort6, wort8, wort3, wort9, wort4, wort2, EQUALS, EQUALS, wort5, EQUALS, ARITHEXPR
+            // elements: EQUALS, wort4, wort1, wort9, EQUALS, arithexpr, wort6, arithexpr, arithexpr, wort9, wort1, EQUALS, wort2, arithexpr, wort2, wort7, wort6, EQUALS, EQUALS, arithexpr, wort7, wort8, EQUALS, arithexpr, wort4, wort5, wort3, wort3, wort5, wort8
             // token labels: 
             // rule labels: wort1, wort3, wort2, wort5, wort4, wort7, wort6, wort9, retval, wort8
             // token list labels: 
@@ -272,21 +291,19 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_wort8=new RewriteRuleSubtreeStream(adaptor,"rule wort8",wort8!=null?wort8.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 17:3: -> ^( EQUALS ^( ARITHEXPR $wort1 $wort2) $wort3) ^( EQUALS ^( ARITHEXPR $wort4 $wort5) $wort6) ^( EQUALS ^( ARITHEXPR $wort7 $wort8) $wort9) ^( EQUALS ^( ARITHEXPR $wort1 $wort4) $wort7) ^( EQUALS ^( ARITHEXPR $wort2 $wort5) $wort8) ^( EQUALS ^( ARITHEXPR $wort3 $wort6) $wort9)
+            // 17:3: -> ^( EQUALS ^( arithexpr $wort1 $wort2) $wort3) ^( EQUALS ^( arithexpr $wort4 $wort5) $wort6) ^( EQUALS ^( arithexpr $wort7 $wort8) $wort9) ^( EQUALS ^( arithexpr $wort1 $wort4) $wort7) ^( EQUALS ^( arithexpr $wort2 $wort5) $wort8) ^( EQUALS ^( arithexpr $wort3 $wort6) $wort9)
             {
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:17:6: ^( EQUALS ^( ARITHEXPR $wort1 $wort2) $wort3)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:17:6: ^( EQUALS ^( arithexpr $wort1 $wort2) $wort3)
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(
                 stream_EQUALS.nextNode()
                 , root_1);
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:17:15: ^( ARITHEXPR $wort1 $wort2)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:17:15: ^( arithexpr $wort1 $wort2)
                 {
                 Object root_2 = (Object)adaptor.nil();
-                root_2 = (Object)adaptor.becomeRoot(
-                stream_ARITHEXPR.nextNode()
-                , root_2);
+                root_2 = (Object)adaptor.becomeRoot(stream_arithexpr.nextNode(), root_2);
 
                 adaptor.addChild(root_2, stream_wort1.nextTree());
 
@@ -300,19 +317,17 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_0, root_1);
                 }
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:18:3: ^( EQUALS ^( ARITHEXPR $wort4 $wort5) $wort6)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:18:3: ^( EQUALS ^( arithexpr $wort4 $wort5) $wort6)
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(
                 stream_EQUALS.nextNode()
                 , root_1);
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:18:12: ^( ARITHEXPR $wort4 $wort5)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:18:12: ^( arithexpr $wort4 $wort5)
                 {
                 Object root_2 = (Object)adaptor.nil();
-                root_2 = (Object)adaptor.becomeRoot(
-                stream_ARITHEXPR.nextNode()
-                , root_2);
+                root_2 = (Object)adaptor.becomeRoot(stream_arithexpr.nextNode(), root_2);
 
                 adaptor.addChild(root_2, stream_wort4.nextTree());
 
@@ -326,19 +341,17 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_0, root_1);
                 }
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:19:3: ^( EQUALS ^( ARITHEXPR $wort7 $wort8) $wort9)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:19:3: ^( EQUALS ^( arithexpr $wort7 $wort8) $wort9)
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(
                 stream_EQUALS.nextNode()
                 , root_1);
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:19:12: ^( ARITHEXPR $wort7 $wort8)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:19:12: ^( arithexpr $wort7 $wort8)
                 {
                 Object root_2 = (Object)adaptor.nil();
-                root_2 = (Object)adaptor.becomeRoot(
-                stream_ARITHEXPR.nextNode()
-                , root_2);
+                root_2 = (Object)adaptor.becomeRoot(stream_arithexpr.nextNode(), root_2);
 
                 adaptor.addChild(root_2, stream_wort7.nextTree());
 
@@ -352,19 +365,17 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_0, root_1);
                 }
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:20:3: ^( EQUALS ^( ARITHEXPR $wort1 $wort4) $wort7)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:20:3: ^( EQUALS ^( arithexpr $wort1 $wort4) $wort7)
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(
                 stream_EQUALS.nextNode()
                 , root_1);
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:20:12: ^( ARITHEXPR $wort1 $wort4)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:20:12: ^( arithexpr $wort1 $wort4)
                 {
                 Object root_2 = (Object)adaptor.nil();
-                root_2 = (Object)adaptor.becomeRoot(
-                stream_ARITHEXPR.nextNode()
-                , root_2);
+                root_2 = (Object)adaptor.becomeRoot(stream_arithexpr.nextNode(), root_2);
 
                 adaptor.addChild(root_2, stream_wort1.nextTree());
 
@@ -378,19 +389,17 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_0, root_1);
                 }
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:21:3: ^( EQUALS ^( ARITHEXPR $wort2 $wort5) $wort8)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:21:3: ^( EQUALS ^( arithexpr $wort2 $wort5) $wort8)
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(
                 stream_EQUALS.nextNode()
                 , root_1);
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:21:12: ^( ARITHEXPR $wort2 $wort5)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:21:12: ^( arithexpr $wort2 $wort5)
                 {
                 Object root_2 = (Object)adaptor.nil();
-                root_2 = (Object)adaptor.becomeRoot(
-                stream_ARITHEXPR.nextNode()
-                , root_2);
+                root_2 = (Object)adaptor.becomeRoot(stream_arithexpr.nextNode(), root_2);
 
                 adaptor.addChild(root_2, stream_wort2.nextTree());
 
@@ -404,19 +413,17 @@ public TreeAdaptor getTreeAdaptor() {
                 adaptor.addChild(root_0, root_1);
                 }
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:22:3: ^( EQUALS ^( ARITHEXPR $wort3 $wort6) $wort9)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:22:3: ^( EQUALS ^( arithexpr $wort3 $wort6) $wort9)
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(
                 stream_EQUALS.nextNode()
                 , root_1);
 
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:22:12: ^( ARITHEXPR $wort3 $wort6)
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:22:12: ^( arithexpr $wort3 $wort6)
                 {
                 Object root_2 = (Object)adaptor.nil();
-                root_2 = (Object)adaptor.becomeRoot(
-                stream_ARITHEXPR.nextNode()
-                , root_2);
+                root_2 = (Object)adaptor.becomeRoot(stream_arithexpr.nextNode(), root_2);
 
                 adaptor.addChild(root_2, stream_wort3.nextTree());
 
@@ -613,7 +620,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_word.add(word18.getTree());
 
             // AST REWRITE
-            // elements: word, arithsingleexpr, EQUALS
+            // elements: arithsingleexpr, word, EQUALS
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -675,7 +682,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "arithsingleexpr"
-    // /home/slaan/git/cip/praktikum3/praktikum2a.g:29:1: arithsingleexpr : word ARITHEXPR word -> ^( ARITHEXPR word word ) ;
+    // /home/slaan/git/cip/praktikum3/praktikum2a.g:29:1: arithsingleexpr : word arithexpr word -> ^( arithexpr word word ) ;
     public final praktikum2aParser.arithsingleexpr_return arithsingleexpr() throws RecognitionException {
         praktikum2aParser.arithsingleexpr_return retval = new praktikum2aParser.arithsingleexpr_return();
         retval.start = input.LT(1);
@@ -683,18 +690,18 @@ public TreeAdaptor getTreeAdaptor() {
 
         Object root_0 = null;
 
-        Token ARITHEXPR20=null;
         praktikum2aParser.word_return word19 =null;
+
+        praktikum2aParser.arithexpr_return arithexpr20 =null;
 
         praktikum2aParser.word_return word21 =null;
 
 
-        Object ARITHEXPR20_tree=null;
-        RewriteRuleTokenStream stream_ARITHEXPR=new RewriteRuleTokenStream(adaptor,"token ARITHEXPR");
+        RewriteRuleSubtreeStream stream_arithexpr=new RewriteRuleSubtreeStream(adaptor,"rule arithexpr");
         RewriteRuleSubtreeStream stream_word=new RewriteRuleSubtreeStream(adaptor,"rule word");
         try {
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:30:2: ( word ARITHEXPR word -> ^( ARITHEXPR word word ) )
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:30:4: word ARITHEXPR word
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:30:2: ( word arithexpr word -> ^( arithexpr word word ) )
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:30:4: word arithexpr word
             {
             pushFollow(FOLLOW_word_in_arithsingleexpr277);
             word19=word();
@@ -703,9 +710,12 @@ public TreeAdaptor getTreeAdaptor() {
 
             stream_word.add(word19.getTree());
 
-            ARITHEXPR20=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_arithsingleexpr279);  
-            stream_ARITHEXPR.add(ARITHEXPR20);
+            pushFollow(FOLLOW_arithexpr_in_arithsingleexpr279);
+            arithexpr20=arithexpr();
 
+            state._fsp--;
+
+            stream_arithexpr.add(arithexpr20.getTree());
 
             pushFollow(FOLLOW_word_in_arithsingleexpr281);
             word21=word();
@@ -715,7 +725,7 @@ public TreeAdaptor getTreeAdaptor() {
             stream_word.add(word21.getTree());
 
             // AST REWRITE
-            // elements: ARITHEXPR, word, word
+            // elements: word, word, arithexpr
             // token labels: 
             // rule labels: retval
             // token list labels: 
@@ -725,14 +735,12 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 30:24: -> ^( ARITHEXPR word word )
+            // 30:24: -> ^( arithexpr word word )
             {
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:30:27: ^( ARITHEXPR word word )
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:30:27: ^( arithexpr word word )
                 {
                 Object root_1 = (Object)adaptor.nil();
-                root_1 = (Object)adaptor.becomeRoot(
-                stream_ARITHEXPR.nextNode()
-                , root_1);
+                root_1 = (Object)adaptor.becomeRoot(stream_arithexpr.nextNode(), root_1);
 
                 adaptor.addChild(root_1, stream_word.nextTree());
 
@@ -882,7 +890,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "arithmultexpr"
-    // /home/slaan/git/cip/praktikum3/praktikum2a.g:35:1: arithmultexpr : ARITHEXPR ARITHEXPR ARITHEXPR ;
+    // /home/slaan/git/cip/praktikum3/praktikum2a.g:35:1: arithmultexpr : arithexpr arithexpr arithexpr ;
     public final praktikum2aParser.arithmultexpr_return arithmultexpr() throws RecognitionException {
         praktikum2aParser.arithmultexpr_return retval = new praktikum2aParser.arithmultexpr_return();
         retval.start = input.LT(1);
@@ -890,41 +898,41 @@ public TreeAdaptor getTreeAdaptor() {
 
         Object root_0 = null;
 
-        Token ARITHEXPR25=null;
-        Token ARITHEXPR26=null;
-        Token ARITHEXPR27=null;
+        praktikum2aParser.arithexpr_return arithexpr25 =null;
 
-        Object ARITHEXPR25_tree=null;
-        Object ARITHEXPR26_tree=null;
-        Object ARITHEXPR27_tree=null;
+        praktikum2aParser.arithexpr_return arithexpr26 =null;
+
+        praktikum2aParser.arithexpr_return arithexpr27 =null;
+
+
 
         try {
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:36:2: ( ARITHEXPR ARITHEXPR ARITHEXPR )
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:36:4: ARITHEXPR ARITHEXPR ARITHEXPR
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:36:2: ( arithexpr arithexpr arithexpr )
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:36:4: arithexpr arithexpr arithexpr
             {
             root_0 = (Object)adaptor.nil();
 
 
-            ARITHEXPR25=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_arithmultexpr323); 
-            ARITHEXPR25_tree = 
-            (Object)adaptor.create(ARITHEXPR25)
-            ;
-            adaptor.addChild(root_0, ARITHEXPR25_tree);
+            pushFollow(FOLLOW_arithexpr_in_arithmultexpr323);
+            arithexpr25=arithexpr();
 
+            state._fsp--;
 
-            ARITHEXPR26=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_arithmultexpr325); 
-            ARITHEXPR26_tree = 
-            (Object)adaptor.create(ARITHEXPR26)
-            ;
-            adaptor.addChild(root_0, ARITHEXPR26_tree);
+            adaptor.addChild(root_0, arithexpr25.getTree());
 
+            pushFollow(FOLLOW_arithexpr_in_arithmultexpr325);
+            arithexpr26=arithexpr();
 
-            ARITHEXPR27=(Token)match(input,ARITHEXPR,FOLLOW_ARITHEXPR_in_arithmultexpr327); 
-            ARITHEXPR27_tree = 
-            (Object)adaptor.create(ARITHEXPR27)
-            ;
-            adaptor.addChild(root_0, ARITHEXPR27_tree);
+            state._fsp--;
 
+            adaptor.addChild(root_0, arithexpr26.getTree());
+
+            pushFollow(FOLLOW_arithexpr_in_arithmultexpr327);
+            arithexpr27=arithexpr();
+
+            state._fsp--;
+
+            adaptor.addChild(root_0, arithexpr27.getTree());
 
             }
 
@@ -1025,6 +1033,71 @@ public TreeAdaptor getTreeAdaptor() {
     // $ANTLR end "equalsmultexpr"
 
 
+    public static class arithexpr_return extends ParserRuleReturnScope {
+        Object tree;
+        public Object getTree() { return tree; }
+    };
+
+
+    // $ANTLR start "arithexpr"
+    // /home/slaan/git/cip/praktikum3/praktikum2a.g:41:1: arithexpr : ( PLUS | MINUS ) ;
+    public final praktikum2aParser.arithexpr_return arithexpr() throws RecognitionException {
+        praktikum2aParser.arithexpr_return retval = new praktikum2aParser.arithexpr_return();
+        retval.start = input.LT(1);
+
+
+        Object root_0 = null;
+
+        Token set31=null;
+
+        Object set31_tree=null;
+
+        try {
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:41:11: ( ( PLUS | MINUS ) )
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:
+            {
+            root_0 = (Object)adaptor.nil();
+
+
+            set31=(Token)input.LT(1);
+
+            if ( input.LA(1)==MINUS||input.LA(1)==PLUS ) {
+                input.consume();
+                adaptor.addChild(root_0, 
+                (Object)adaptor.create(set31)
+                );
+                state.errorRecovery=false;
+            }
+            else {
+                MismatchedSetException mse = new MismatchedSetException(null,input);
+                throw mse;
+            }
+
+
+            }
+
+            retval.stop = input.LT(-1);
+
+
+            retval.tree = (Object)adaptor.rulePostProcessing(root_0);
+            adaptor.setTokenBoundaries(retval.tree, retval.start, retval.stop);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+    	retval.tree = (Object)adaptor.errorNode(input, retval.start, input.LT(-1), re);
+
+        }
+
+        finally {
+        	// do for sure before leaving
+        }
+        return retval;
+    }
+    // $ANTLR end "arithexpr"
+
+
     public static class word_return extends ParserRuleReturnScope {
         Object tree;
         public Object getTree() { return tree; }
@@ -1032,7 +1105,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "word"
-    // /home/slaan/git/cip/praktikum3/praktikum2a.g:45:1: word : ( letters )+ -> ^( WORD ( letters )+ ) ;
+    // /home/slaan/git/cip/praktikum3/praktikum2a.g:49:1: word : ( letters )+ -> ^( WORD ( letters )+ ) ;
     public final praktikum2aParser.word_return word() throws RecognitionException {
         praktikum2aParser.word_return retval = new praktikum2aParser.word_return();
         retval.start = input.LT(1);
@@ -1040,36 +1113,36 @@ public TreeAdaptor getTreeAdaptor() {
 
         Object root_0 = null;
 
-        praktikum2aParser.letters_return letters31 =null;
+        praktikum2aParser.letters_return letters32 =null;
 
 
         RewriteRuleSubtreeStream stream_letters=new RewriteRuleSubtreeStream(adaptor,"rule letters");
         try {
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:45:6: ( ( letters )+ -> ^( WORD ( letters )+ ) )
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:45:8: ( letters )+
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:49:6: ( ( letters )+ -> ^( WORD ( letters )+ ) )
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:49:8: ( letters )+
             {
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:45:8: ( letters )+
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:49:8: ( letters )+
             int cnt1=0;
             loop1:
             do {
                 int alt1=2;
                 int LA1_0 = input.LA(1);
 
-                if ( ((LA1_0 >= A_LET && LA1_0 <= B_LET)||(LA1_0 >= C_LET && LA1_0 <= D_LET)||(LA1_0 >= E_LET && LA1_0 <= V_LET)||(LA1_0 >= W_LET && LA1_0 <= Z_LET)) ) {
+                if ( ((LA1_0 >= A_LET && LA1_0 <= B_LET)||(LA1_0 >= C_LET && LA1_0 <= D_LET)||(LA1_0 >= E_LET && LA1_0 <= L_LET)||(LA1_0 >= M_LET && LA1_0 <= O_LET)||(LA1_0 >= P_LET && LA1_0 <= V_LET)||(LA1_0 >= W_LET && LA1_0 <= Z_LET)) ) {
                     alt1=1;
                 }
 
 
                 switch (alt1) {
             	case 1 :
-            	    // /home/slaan/git/cip/praktikum3/praktikum2a.g:45:8: letters
+            	    // /home/slaan/git/cip/praktikum3/praktikum2a.g:49:8: letters
             	    {
-            	    pushFollow(FOLLOW_letters_in_word369);
-            	    letters31=letters();
+            	    pushFollow(FOLLOW_letters_in_word388);
+            	    letters32=letters();
 
             	    state._fsp--;
 
-            	    stream_letters.add(letters31.getTree());
+            	    stream_letters.add(letters32.getTree());
 
             	    }
             	    break;
@@ -1095,9 +1168,9 @@ public TreeAdaptor getTreeAdaptor() {
             RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
 
             root_0 = (Object)adaptor.nil();
-            // 45:17: -> ^( WORD ( letters )+ )
+            // 49:17: -> ^( WORD ( letters )+ )
             {
-                // /home/slaan/git/cip/praktikum3/praktikum2a.g:45:20: ^( WORD ( letters )+ )
+                // /home/slaan/git/cip/praktikum3/praktikum2a.g:49:20: ^( WORD ( letters )+ )
                 {
                 Object root_1 = (Object)adaptor.nil();
                 root_1 = (Object)adaptor.becomeRoot(
@@ -1152,7 +1225,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "letters"
-    // /home/slaan/git/cip/praktikum3/praktikum2a.g:47:1: letters : ( A_LET | B_LET | C_LET | D_LET | E_LET | F_LET | G_LET | H_LET | I_LET | J_LET | K_LET | L_LET | M_LET | N_LET | O_LET | P_LET | Q_LET | R_LET | S_LET | T_LET | U_LET | V_LET | W_LET | X_LET | Y_LET | Z_LET ) ;
+    // /home/slaan/git/cip/praktikum3/praktikum2a.g:51:1: letters : ( A_LET | B_LET | C_LET | D_LET | E_LET | F_LET | G_LET | H_LET | I_LET | J_LET | K_LET | L_LET | M_LET | N_LET | O_LET | P_LET | Q_LET | R_LET | S_LET | T_LET | U_LET | V_LET | W_LET | X_LET | Y_LET | Z_LET ) ;
     public final praktikum2aParser.letters_return letters() throws RecognitionException {
         praktikum2aParser.letters_return retval = new praktikum2aParser.letters_return();
         retval.start = input.LT(1);
@@ -1160,23 +1233,23 @@ public TreeAdaptor getTreeAdaptor() {
 
         Object root_0 = null;
 
-        Token set32=null;
+        Token set33=null;
 
-        Object set32_tree=null;
+        Object set33_tree=null;
 
         try {
-            // /home/slaan/git/cip/praktikum3/praktikum2a.g:47:9: ( ( A_LET | B_LET | C_LET | D_LET | E_LET | F_LET | G_LET | H_LET | I_LET | J_LET | K_LET | L_LET | M_LET | N_LET | O_LET | P_LET | Q_LET | R_LET | S_LET | T_LET | U_LET | V_LET | W_LET | X_LET | Y_LET | Z_LET ) )
+            // /home/slaan/git/cip/praktikum3/praktikum2a.g:51:9: ( ( A_LET | B_LET | C_LET | D_LET | E_LET | F_LET | G_LET | H_LET | I_LET | J_LET | K_LET | L_LET | M_LET | N_LET | O_LET | P_LET | Q_LET | R_LET | S_LET | T_LET | U_LET | V_LET | W_LET | X_LET | Y_LET | Z_LET ) )
             // /home/slaan/git/cip/praktikum3/praktikum2a.g:
             {
             root_0 = (Object)adaptor.nil();
 
 
-            set32=(Token)input.LT(1);
+            set33=(Token)input.LT(1);
 
-            if ( (input.LA(1) >= A_LET && input.LA(1) <= B_LET)||(input.LA(1) >= C_LET && input.LA(1) <= D_LET)||(input.LA(1) >= E_LET && input.LA(1) <= V_LET)||(input.LA(1) >= W_LET && input.LA(1) <= Z_LET) ) {
+            if ( (input.LA(1) >= A_LET && input.LA(1) <= B_LET)||(input.LA(1) >= C_LET && input.LA(1) <= D_LET)||(input.LA(1) >= E_LET && input.LA(1) <= L_LET)||(input.LA(1) >= M_LET && input.LA(1) <= O_LET)||(input.LA(1) >= P_LET && input.LA(1) <= V_LET)||(input.LA(1) >= W_LET && input.LA(1) <= Z_LET) ) {
                 input.consume();
                 adaptor.addChild(root_0, 
-                (Object)adaptor.create(set32)
+                (Object)adaptor.create(set33)
                 );
                 state.errorRecovery=false;
             }
@@ -1214,45 +1287,45 @@ public TreeAdaptor getTreeAdaptor() {
 
  
 
-    public static final BitSet FOLLOW_word_in_start_all38 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_start_all40 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
-    public static final BitSet FOLLOW_word_in_start_all44 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_EQUALS_in_start_all46 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
-    public static final BitSet FOLLOW_word_in_start_all50 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_start_all54 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_start_all56 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_start_all58 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
-    public static final BitSet FOLLOW_word_in_start_all64 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_start_all66 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
-    public static final BitSet FOLLOW_word_in_start_all70 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_EQUALS_in_start_all72 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
-    public static final BitSet FOLLOW_word_in_start_all76 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_EQUALS_in_start_all80 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_EQUALS_in_start_all82 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_EQUALS_in_start_all84 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
-    public static final BitSet FOLLOW_word_in_start_all90 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_start_all92 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
-    public static final BitSet FOLLOW_word_in_start_all96 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_EQUALS_in_start_all98 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
+    public static final BitSet FOLLOW_word_in_start_all38 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_start_all40 = new BitSet(new long[]{0x0000003CFEEFF360L});
+    public static final BitSet FOLLOW_word_in_start_all44 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_EQUALS_in_start_all46 = new BitSet(new long[]{0x0000003CFEEFF360L});
+    public static final BitSet FOLLOW_word_in_start_all50 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_start_all54 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_start_all56 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_start_all58 = new BitSet(new long[]{0x0000003CFEEFF360L});
+    public static final BitSet FOLLOW_word_in_start_all64 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_start_all66 = new BitSet(new long[]{0x0000003CFEEFF360L});
+    public static final BitSet FOLLOW_word_in_start_all70 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_EQUALS_in_start_all72 = new BitSet(new long[]{0x0000003CFEEFF360L});
+    public static final BitSet FOLLOW_word_in_start_all76 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_EQUALS_in_start_all80 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_EQUALS_in_start_all82 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_EQUALS_in_start_all84 = new BitSet(new long[]{0x0000003CFEEFF360L});
+    public static final BitSet FOLLOW_word_in_start_all90 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_start_all92 = new BitSet(new long[]{0x0000003CFEEFF360L});
+    public static final BitSet FOLLOW_word_in_start_all96 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_EQUALS_in_start_all98 = new BitSet(new long[]{0x0000003CFEEFF360L});
     public static final BitSet FOLLOW_word_in_start_all102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_calcarithexpr_in_start231 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_equalsmultexpr_in_start233 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
+    public static final BitSet FOLLOW_calcarithexpr_in_start231 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_equalsmultexpr_in_start233 = new BitSet(new long[]{0x0000003CFEEFF360L});
     public static final BitSet FOLLOW_calcZeile_in_start235 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_arithsingleexpr_in_calcZeile254 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_EQUALS_in_calcZeile256 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
+    public static final BitSet FOLLOW_arithsingleexpr_in_calcZeile254 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_EQUALS_in_calcZeile256 = new BitSet(new long[]{0x0000003CFEEFF360L});
     public static final BitSet FOLLOW_word_in_calcZeile258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_word_in_arithsingleexpr277 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_arithsingleexpr279 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
+    public static final BitSet FOLLOW_word_in_arithsingleexpr277 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_arithsingleexpr279 = new BitSet(new long[]{0x0000003CFEEFF360L});
     public static final BitSet FOLLOW_word_in_arithsingleexpr281 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_calcZeile_in_calcarithexpr300 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_arithmultexpr_in_calcarithexpr302 = new BitSet(new long[]{0x0000001E7FFFE6C0L});
+    public static final BitSet FOLLOW_calcZeile_in_calcarithexpr300 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithmultexpr_in_calcarithexpr302 = new BitSet(new long[]{0x0000003CFEEFF360L});
     public static final BitSet FOLLOW_calcZeile_in_calcarithexpr304 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_arithmultexpr323 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_arithmultexpr325 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ARITHEXPR_in_arithmultexpr327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_EQUALS_in_equalsmultexpr337 = new BitSet(new long[]{0x0000000000000800L});
-    public static final BitSet FOLLOW_EQUALS_in_equalsmultexpr339 = new BitSet(new long[]{0x0000000000000800L});
+    public static final BitSet FOLLOW_arithexpr_in_arithmultexpr323 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_arithmultexpr325 = new BitSet(new long[]{0x0000000001100000L});
+    public static final BitSet FOLLOW_arithexpr_in_arithmultexpr327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUALS_in_equalsmultexpr337 = new BitSet(new long[]{0x0000000000000400L});
+    public static final BitSet FOLLOW_EQUALS_in_equalsmultexpr339 = new BitSet(new long[]{0x0000000000000400L});
     public static final BitSet FOLLOW_EQUALS_in_equalsmultexpr341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_letters_in_word369 = new BitSet(new long[]{0x0000001E7FFFE6C2L});
+    public static final BitSet FOLLOW_letters_in_word388 = new BitSet(new long[]{0x0000003CFEEFF362L});
 
 }
