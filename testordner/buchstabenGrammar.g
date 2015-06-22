@@ -6,6 +6,7 @@ tokens {
 	EQUALSMULTT;
 	ARITHMULTT;
 	WORD;
+	PUZZLE;
 }
 
 start_all
@@ -14,12 +15,12 @@ start_all
 		wort4=word arithexpr wort5=word EQUALS wort6=word
 		EQUALS EQUALS EQUALS
 		wort7=word arithexpr wort8=word EQUALS wort9=word
-		-> ^(EQUALS ^(arithexpr $wort1 $wort2) $wort3)
+		-> ^(PUZZLE ^(EQUALS ^(arithexpr $wort1 $wort2) $wort3)
 		^(EQUALS ^(arithexpr $wort4 $wort5) $wort6)
 		^(EQUALS ^(arithexpr $wort7 $wort8) $wort9)
 		^(EQUALS ^(arithexpr $wort1 $wort4) $wort7)
 		^(EQUALS ^(arithexpr $wort2 $wort5) $wort8)
-		^(EQUALS ^(arithexpr $wort3 $wort6) $wort9)
+		^(EQUALS ^(arithexpr $wort3 $wort6) $wort9))
 		;
 
 start 	: 	calcarithexpr equalsmultexpr calcZeile -> ^(EQUALSMULTT calcarithexpr calcZeile);
@@ -48,7 +49,9 @@ EQUALS 	:	 '=';
 
 word	:	letters+ -> ^(WORD letters+);
 
-letters	:	(A_LET|B_LET|C_LET|D_LET|E_LET|F_LET|G_LET|H_LET|I_LET|J_LET|K_LET|L_LET|M_LET|N_LET|O_LET|P_LET
+letters	:	BUCHSTABEN+;
+/*
+(A_LET|B_LET|C_LET|D_LET|E_LET|F_LET|G_LET|H_LET|I_LET|J_LET|K_LET|L_LET|M_LET|N_LET|O_LET|P_LET
 		|Q_LET|R_LET|S_LET|T_LET|U_LET|V_LET|W_LET|X_LET|Y_LET|Z_LET);
 A_LET	:	'A';
 B_LET	:	'B';
@@ -76,6 +79,10 @@ W_LET	:	'W';
 X_LET	:	'X';
 Y_LET	:	'Y';
 Z_LET	:	'Z';
+*/
+
+  BUCHSTABEN
+  	:	('A'..'Z');	
 
 
 COMMENT

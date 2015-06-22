@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home/slaan/git/cip/testordner/treeWalker.g 2015-06-15 15:09:44
+// $ANTLR 3.4 /home/slaan/git/cip/testordner/treeWalker.g 2015-06-22 16:30:23
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
@@ -10,49 +10,20 @@ import java.util.ArrayList;
 @SuppressWarnings({"all", "warnings", "unchecked"})
 public class treeWalker extends TreeParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ARITHMULTT", "A_LET", "B_LET", "COMMENT", "C_LET", "D_LET", "EQUALS", "EQUALSMULTT", "E_LET", "F_LET", "G_LET", "H_LET", "I_LET", "J_LET", "K_LET", "L_LET", "MINUS", "M_LET", "N_LET", "O_LET", "PLUS", "P_LET", "Q_LET", "R_LET", "S_LET", "T_LET", "U_LET", "V_LET", "WORD", "WS", "W_LET", "X_LET", "Y_LET", "Z_LET", "'('", "')'", "'+'", "'-'", "'WORD'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "ARITHMULTT", "BUCHSTABEN", "COMMENT", "EQUALS", "EQUALSMULTT", "MINUS", "PLUS", "PUZZLE", "WORD", "WS"
     };
 
     public static final int EOF=-1;
     public static final int ARITHMULTT=4;
-    public static final int A_LET=5;
-    public static final int B_LET=6;
-    public static final int COMMENT=7;
-    public static final int C_LET=8;
-    public static final int D_LET=9;
-    public static final int EQUALS=10;
-    public static final int EQUALSMULTT=11;
-    public static final int E_LET=12;
-    public static final int F_LET=13;
-    public static final int G_LET=14;
-    public static final int H_LET=15;
-    public static final int I_LET=16;
-    public static final int J_LET=17;
-    public static final int K_LET=18;
-    public static final int L_LET=19;
-    public static final int MINUS=20;
-    public static final int M_LET=21;
-    public static final int N_LET=22;
-    public static final int O_LET=23;
-    public static final int PLUS=24;
-    public static final int P_LET=25;
-    public static final int Q_LET=26;
-    public static final int R_LET=27;
-    public static final int S_LET=28;
-    public static final int T_LET=29;
-    public static final int U_LET=30;
-    public static final int V_LET=31;
-    public static final int WORD=32;
-    public static final int WS=33;
-    public static final int W_LET=34;
-    public static final int X_LET=35;
-    public static final int Y_LET=36;
-    public static final int Z_LET=37;
-    public static final int T__38=38;
-    public static final int T__39=39;
-    public static final int T__40=40;
-    public static final int T__41=41;
-    public static final int T__42=42;
+    public static final int BUCHSTABEN=5;
+    public static final int COMMENT=6;
+    public static final int EQUALS=7;
+    public static final int EQUALSMULTT=8;
+    public static final int MINUS=9;
+    public static final int PLUS=10;
+    public static final int PUZZLE=11;
+    public static final int WORD=12;
+    public static final int WS=13;
 
     // delegates
     public TreeParser[] getDelegates() {
@@ -88,7 +59,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "start"
-    // /home/slaan/git/cip/testordner/treeWalker.g:7:1: start : ( subtree )* ;
+    // /home/slaan/git/cip/testordner/treeWalker.g:9:1: start : ^( PUZZLE ( subtree )* ) -> ^( PUZZLE ( subtree )* ) ;
     public final treeWalker.start_return start() throws RecognitionException {
         treeWalker.start_return retval = new treeWalker.start_return();
         retval.start = input.LT(1);
@@ -99,49 +70,102 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree _first_0 = null;
         CommonTree _last = null;
 
-        treeWalker.subtree_return subtree1 =null;
+        CommonTree PUZZLE1=null;
+        treeWalker.subtree_return subtree2 =null;
 
 
-
+        CommonTree PUZZLE1_tree=null;
+        RewriteRuleNodeStream stream_PUZZLE=new RewriteRuleNodeStream(adaptor,"token PUZZLE");
+        RewriteRuleSubtreeStream stream_subtree=new RewriteRuleSubtreeStream(adaptor,"rule subtree");
         try {
-            // /home/slaan/git/cip/testordner/treeWalker.g:7:7: ( ( subtree )* )
-            // /home/slaan/git/cip/testordner/treeWalker.g:7:9: ( subtree )*
+            // /home/slaan/git/cip/testordner/treeWalker.g:9:7: ( ^( PUZZLE ( subtree )* ) -> ^( PUZZLE ( subtree )* ) )
+            // /home/slaan/git/cip/testordner/treeWalker.g:9:9: ^( PUZZLE ( subtree )* )
             {
+            _last = (CommonTree)input.LT(1);
+            {
+            CommonTree _save_last_1 = _last;
+            CommonTree _first_1 = null;
+            CommonTree root_1 = (CommonTree)adaptor.nil();
+            _last = (CommonTree)input.LT(1);
+            PUZZLE1=(CommonTree)match(input,PUZZLE,FOLLOW_PUZZLE_in_start37);  
+            stream_PUZZLE.add(PUZZLE1);
+
+
+            if ( input.LA(1)==Token.DOWN ) {
+                match(input, Token.DOWN, null); 
+                // /home/slaan/git/cip/testordner/treeWalker.g:9:18: ( subtree )*
+                loop1:
+                do {
+                    int alt1=2;
+                    int LA1_0 = input.LA(1);
+
+                    if ( (LA1_0==EQUALS) ) {
+                        alt1=1;
+                    }
+
+
+                    switch (alt1) {
+                	case 1 :
+                	    // /home/slaan/git/cip/testordner/treeWalker.g:9:18: subtree
+                	    {
+                	    _last = (CommonTree)input.LT(1);
+                	    pushFollow(FOLLOW_subtree_in_start39);
+                	    subtree2=subtree();
+
+                	    state._fsp--;
+
+                	    stream_subtree.add(subtree2.getTree());
+
+                	    }
+                	    break;
+
+                	default :
+                	    break loop1;
+                    }
+                } while (true);
+
+
+                match(input, Token.UP, null); 
+            }
+            adaptor.addChild(root_0, root_1);
+            _last = _save_last_1;
+            }
+
+
+            // AST REWRITE
+            // elements: subtree, PUZZLE
+            // token labels: 
+            // rule labels: retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
             root_0 = (CommonTree)adaptor.nil();
+            // 9:28: -> ^( PUZZLE ( subtree )* )
+            {
+                // /home/slaan/git/cip/testordner/treeWalker.g:9:31: ^( PUZZLE ( subtree )* )
+                {
+                CommonTree root_1 = (CommonTree)adaptor.nil();
+                root_1 = (CommonTree)adaptor.becomeRoot(
+                stream_PUZZLE.nextNode()
+                , root_1);
 
+                // /home/slaan/git/cip/testordner/treeWalker.g:9:40: ( subtree )*
+                while ( stream_subtree.hasNext() ) {
+                    adaptor.addChild(root_1, stream_subtree.nextTree());
 
-            // /home/slaan/git/cip/testordner/treeWalker.g:7:9: ( subtree )*
-            loop1:
-            do {
-                int alt1=2;
-                int LA1_0 = input.LA(1);
+                }
+                stream_subtree.reset();
 
-                if ( (LA1_0==38) ) {
-                    alt1=1;
+                adaptor.addChild(root_0, root_1);
                 }
 
-
-                switch (alt1) {
-            	case 1 :
-            	    // /home/slaan/git/cip/testordner/treeWalker.g:7:9: subtree
-            	    {
-            	    _last = (CommonTree)input.LT(1);
-            	    pushFollow(FOLLOW_subtree_in_start31);
-            	    subtree1=subtree();
-
-            	    state._fsp--;
-
-            	    adaptor.addChild(root_0, subtree1.getTree());
+            }
 
 
-            	    }
-            	    break;
-
-            	default :
-            	    break loop1;
-                }
-            } while (true);
-
+            retval.tree = root_0;
 
             }
 
@@ -168,7 +192,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "subtree"
-    // /home/slaan/git/cip/testordner/treeWalker.g:9:1: subtree : ( '(' EQUALS '(' '+' wort1= wordtree wort2= wordtree ')' wort3= wordtree ')' -> ^( EQUALS ^( PLUS $wort1 $wort2) $wort3) | '(' EQUALS '(' '-' wort1= wordtree wort2= wordtree ')' wort3= wordtree ')' -> ^( EQUALS ^( PLUS $wort3 $wort2) $wort1) );
+    // /home/slaan/git/cip/testordner/treeWalker.g:11:1: subtree : ( plustree | minustree );
     public final treeWalker.subtree_return subtree() throws RecognitionException {
         treeWalker.subtree_return retval = new treeWalker.subtree_return();
         retval.start = input.LT(1);
@@ -179,70 +203,28 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree _first_0 = null;
         CommonTree _last = null;
 
-        CommonTree char_literal2=null;
-        CommonTree EQUALS3=null;
-        CommonTree char_literal4=null;
-        CommonTree char_literal5=null;
-        CommonTree char_literal6=null;
-        CommonTree char_literal7=null;
-        CommonTree char_literal8=null;
-        CommonTree EQUALS9=null;
-        CommonTree char_literal10=null;
-        CommonTree char_literal11=null;
-        CommonTree char_literal12=null;
-        CommonTree char_literal13=null;
-        treeWalker.wordtree_return wort1 =null;
+        treeWalker.plustree_return plustree3 =null;
 
-        treeWalker.wordtree_return wort2 =null;
-
-        treeWalker.wordtree_return wort3 =null;
+        treeWalker.minustree_return minustree4 =null;
 
 
-        CommonTree char_literal2_tree=null;
-        CommonTree EQUALS3_tree=null;
-        CommonTree char_literal4_tree=null;
-        CommonTree char_literal5_tree=null;
-        CommonTree char_literal6_tree=null;
-        CommonTree char_literal7_tree=null;
-        CommonTree char_literal8_tree=null;
-        CommonTree EQUALS9_tree=null;
-        CommonTree char_literal10_tree=null;
-        CommonTree char_literal11_tree=null;
-        CommonTree char_literal12_tree=null;
-        CommonTree char_literal13_tree=null;
-        RewriteRuleNodeStream stream_EQUALS=new RewriteRuleNodeStream(adaptor,"token EQUALS");
-        RewriteRuleNodeStream stream_38=new RewriteRuleNodeStream(adaptor,"token 38");
-        RewriteRuleNodeStream stream_39=new RewriteRuleNodeStream(adaptor,"token 39");
-        RewriteRuleNodeStream stream_40=new RewriteRuleNodeStream(adaptor,"token 40");
-        RewriteRuleNodeStream stream_41=new RewriteRuleNodeStream(adaptor,"token 41");
-        RewriteRuleSubtreeStream stream_wordtree=new RewriteRuleSubtreeStream(adaptor,"rule wordtree");
+
         try {
-            // /home/slaan/git/cip/testordner/treeWalker.g:9:9: ( '(' EQUALS '(' '+' wort1= wordtree wort2= wordtree ')' wort3= wordtree ')' -> ^( EQUALS ^( PLUS $wort1 $wort2) $wort3) | '(' EQUALS '(' '-' wort1= wordtree wort2= wordtree ')' wort3= wordtree ')' -> ^( EQUALS ^( PLUS $wort3 $wort2) $wort1) )
+            // /home/slaan/git/cip/testordner/treeWalker.g:11:9: ( plustree | minustree )
             int alt2=2;
             int LA2_0 = input.LA(1);
 
-            if ( (LA2_0==38) ) {
+            if ( (LA2_0==EQUALS) ) {
                 int LA2_1 = input.LA(2);
 
-                if ( (LA2_1==EQUALS) ) {
+                if ( (LA2_1==DOWN) ) {
                     int LA2_2 = input.LA(3);
 
-                    if ( (LA2_2==38) ) {
-                        int LA2_3 = input.LA(4);
-
-                        if ( (LA2_3==40) ) {
-                            alt2=1;
-                        }
-                        else if ( (LA2_3==41) ) {
-                            alt2=2;
-                        }
-                        else {
-                            NoViableAltException nvae =
-                                new NoViableAltException("", 2, 3, input);
-
-                            throw nvae;
-
-                        }
+                    if ( (LA2_2==PLUS) ) {
+                        alt2=1;
+                    }
+                    else if ( (LA2_2==MINUS) ) {
+                        alt2=2;
                     }
                     else {
                         NoViableAltException nvae =
@@ -269,214 +251,36 @@ public TreeAdaptor getTreeAdaptor() {
             }
             switch (alt2) {
                 case 1 :
-                    // /home/slaan/git/cip/testordner/treeWalker.g:9:11: '(' EQUALS '(' '+' wort1= wordtree wort2= wordtree ')' wort3= wordtree ')'
+                    // /home/slaan/git/cip/testordner/treeWalker.g:11:11: plustree
                     {
-                    _last = (CommonTree)input.LT(1);
-                    char_literal2=(CommonTree)match(input,38,FOLLOW_38_in_subtree40);  
-                    stream_38.add(char_literal2);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    EQUALS3=(CommonTree)match(input,EQUALS,FOLLOW_EQUALS_in_subtree42);  
-                    stream_EQUALS.add(EQUALS3);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    char_literal4=(CommonTree)match(input,38,FOLLOW_38_in_subtree44);  
-                    stream_38.add(char_literal4);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    char_literal5=(CommonTree)match(input,40,FOLLOW_40_in_subtree46);  
-                    stream_40.add(char_literal5);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_wordtree_in_subtree50);
-                    wort1=wordtree();
-
-                    state._fsp--;
-
-                    stream_wordtree.add(wort1.getTree());
-
-                    _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_wordtree_in_subtree54);
-                    wort2=wordtree();
-
-                    state._fsp--;
-
-                    stream_wordtree.add(wort2.getTree());
-
-                    _last = (CommonTree)input.LT(1);
-                    char_literal6=(CommonTree)match(input,39,FOLLOW_39_in_subtree56);  
-                    stream_39.add(char_literal6);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_wordtree_in_subtree60);
-                    wort3=wordtree();
-
-                    state._fsp--;
-
-                    stream_wordtree.add(wort3.getTree());
-
-                    _last = (CommonTree)input.LT(1);
-                    char_literal7=(CommonTree)match(input,39,FOLLOW_39_in_subtree63);  
-                    stream_39.add(char_literal7);
-
-
-                    // AST REWRITE
-                    // elements: EQUALS, wort2, wort3, wort1
-                    // token labels: 
-                    // rule labels: wort1, wort3, wort2, retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_wort1=new RewriteRuleSubtreeStream(adaptor,"rule wort1",wort1!=null?wort1.tree:null);
-                    RewriteRuleSubtreeStream stream_wort3=new RewriteRuleSubtreeStream(adaptor,"rule wort3",wort3!=null?wort3.tree:null);
-                    RewriteRuleSubtreeStream stream_wort2=new RewriteRuleSubtreeStream(adaptor,"rule wort2",wort2!=null?wort2.tree:null);
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (CommonTree)adaptor.nil();
-                    // 10:4: -> ^( EQUALS ^( PLUS $wort1 $wort2) $wort3)
-                    {
-                        // /home/slaan/git/cip/testordner/treeWalker.g:10:7: ^( EQUALS ^( PLUS $wort1 $wort2) $wort3)
-                        {
-                        CommonTree root_1 = (CommonTree)adaptor.nil();
-                        root_1 = (CommonTree)adaptor.becomeRoot(
-                        stream_EQUALS.nextNode()
-                        , root_1);
-
-                        // /home/slaan/git/cip/testordner/treeWalker.g:10:16: ^( PLUS $wort1 $wort2)
-                        {
-                        CommonTree root_2 = (CommonTree)adaptor.nil();
-                        root_2 = (CommonTree)adaptor.becomeRoot(
-                        (CommonTree)adaptor.create(PLUS, "PLUS")
-                        , root_2);
-
-                        adaptor.addChild(root_2, stream_wort1.nextTree());
-
-                        adaptor.addChild(root_2, stream_wort2.nextTree());
-
-                        adaptor.addChild(root_1, root_2);
-                        }
-
-                        adaptor.addChild(root_1, stream_wort3.nextTree());
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
 
 
-                    retval.tree = root_0;
+                    _last = (CommonTree)input.LT(1);
+                    pushFollow(FOLLOW_plustree_in_subtree58);
+                    plustree3=plustree();
+
+                    state._fsp--;
+
+                    adaptor.addChild(root_0, plustree3.getTree());
+
 
                     }
                     break;
                 case 2 :
-                    // /home/slaan/git/cip/testordner/treeWalker.g:11:4: '(' EQUALS '(' '-' wort1= wordtree wort2= wordtree ')' wort3= wordtree ')'
+                    // /home/slaan/git/cip/testordner/treeWalker.g:11:20: minustree
                     {
-                    _last = (CommonTree)input.LT(1);
-                    char_literal8=(CommonTree)match(input,38,FOLLOW_38_in_subtree91);  
-                    stream_38.add(char_literal8);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    EQUALS9=(CommonTree)match(input,EQUALS,FOLLOW_EQUALS_in_subtree93);  
-                    stream_EQUALS.add(EQUALS9);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    char_literal10=(CommonTree)match(input,38,FOLLOW_38_in_subtree95);  
-                    stream_38.add(char_literal10);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    char_literal11=(CommonTree)match(input,41,FOLLOW_41_in_subtree97);  
-                    stream_41.add(char_literal11);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_wordtree_in_subtree101);
-                    wort1=wordtree();
-
-                    state._fsp--;
-
-                    stream_wordtree.add(wort1.getTree());
-
-                    _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_wordtree_in_subtree105);
-                    wort2=wordtree();
-
-                    state._fsp--;
-
-                    stream_wordtree.add(wort2.getTree());
-
-                    _last = (CommonTree)input.LT(1);
-                    char_literal12=(CommonTree)match(input,39,FOLLOW_39_in_subtree107);  
-                    stream_39.add(char_literal12);
-
-
-                    _last = (CommonTree)input.LT(1);
-                    pushFollow(FOLLOW_wordtree_in_subtree111);
-                    wort3=wordtree();
-
-                    state._fsp--;
-
-                    stream_wordtree.add(wort3.getTree());
-
-                    _last = (CommonTree)input.LT(1);
-                    char_literal13=(CommonTree)match(input,39,FOLLOW_39_in_subtree114);  
-                    stream_39.add(char_literal13);
-
-
-                    // AST REWRITE
-                    // elements: wort3, wort1, EQUALS, wort2
-                    // token labels: 
-                    // rule labels: wort1, wort3, wort2, retval
-                    // token list labels: 
-                    // rule list labels: 
-                    // wildcard labels: 
-                    retval.tree = root_0;
-                    RewriteRuleSubtreeStream stream_wort1=new RewriteRuleSubtreeStream(adaptor,"rule wort1",wort1!=null?wort1.tree:null);
-                    RewriteRuleSubtreeStream stream_wort3=new RewriteRuleSubtreeStream(adaptor,"rule wort3",wort3!=null?wort3.tree:null);
-                    RewriteRuleSubtreeStream stream_wort2=new RewriteRuleSubtreeStream(adaptor,"rule wort2",wort2!=null?wort2.tree:null);
-                    RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
                     root_0 = (CommonTree)adaptor.nil();
-                    // 12:4: -> ^( EQUALS ^( PLUS $wort3 $wort2) $wort1)
-                    {
-                        // /home/slaan/git/cip/testordner/treeWalker.g:12:7: ^( EQUALS ^( PLUS $wort3 $wort2) $wort1)
-                        {
-                        CommonTree root_1 = (CommonTree)adaptor.nil();
-                        root_1 = (CommonTree)adaptor.becomeRoot(
-                        stream_EQUALS.nextNode()
-                        , root_1);
-
-                        // /home/slaan/git/cip/testordner/treeWalker.g:12:16: ^( PLUS $wort3 $wort2)
-                        {
-                        CommonTree root_2 = (CommonTree)adaptor.nil();
-                        root_2 = (CommonTree)adaptor.becomeRoot(
-                        (CommonTree)adaptor.create(PLUS, "PLUS")
-                        , root_2);
-
-                        adaptor.addChild(root_2, stream_wort3.nextTree());
-
-                        adaptor.addChild(root_2, stream_wort2.nextTree());
-
-                        adaptor.addChild(root_1, root_2);
-                        }
-
-                        adaptor.addChild(root_1, stream_wort1.nextTree());
-
-                        adaptor.addChild(root_0, root_1);
-                        }
-
-                    }
 
 
-                    retval.tree = root_0;
+                    _last = (CommonTree)input.LT(1);
+                    pushFollow(FOLLOW_minustree_in_subtree60);
+                    minustree4=minustree();
+
+                    state._fsp--;
+
+                    adaptor.addChild(root_0, minustree4.getTree());
+
 
                     }
                     break;
@@ -498,6 +302,287 @@ public TreeAdaptor getTreeAdaptor() {
     // $ANTLR end "subtree"
 
 
+    public static class plustree_return extends TreeRuleReturnScope {
+        CommonTree tree;
+        public Object getTree() { return tree; }
+    };
+
+
+    // $ANTLR start "plustree"
+    // /home/slaan/git/cip/testordner/treeWalker.g:13:1: plustree : ^( EQUALS ^( PLUS wordtree wordtree ) wordtree ) ;
+    public final treeWalker.plustree_return plustree() throws RecognitionException {
+        treeWalker.plustree_return retval = new treeWalker.plustree_return();
+        retval.start = input.LT(1);
+
+
+        CommonTree root_0 = null;
+
+        CommonTree _first_0 = null;
+        CommonTree _last = null;
+
+        CommonTree EQUALS5=null;
+        CommonTree PLUS6=null;
+        treeWalker.wordtree_return wordtree7 =null;
+
+        treeWalker.wordtree_return wordtree8 =null;
+
+        treeWalker.wordtree_return wordtree9 =null;
+
+
+        CommonTree EQUALS5_tree=null;
+        CommonTree PLUS6_tree=null;
+
+        try {
+            // /home/slaan/git/cip/testordner/treeWalker.g:13:9: ( ^( EQUALS ^( PLUS wordtree wordtree ) wordtree ) )
+            // /home/slaan/git/cip/testordner/treeWalker.g:13:12: ^( EQUALS ^( PLUS wordtree wordtree ) wordtree )
+            {
+            root_0 = (CommonTree)adaptor.nil();
+
+
+            _last = (CommonTree)input.LT(1);
+            {
+            CommonTree _save_last_1 = _last;
+            CommonTree _first_1 = null;
+            CommonTree root_1 = (CommonTree)adaptor.nil();
+            _last = (CommonTree)input.LT(1);
+            EQUALS5=(CommonTree)match(input,EQUALS,FOLLOW_EQUALS_in_plustree69); 
+            EQUALS5_tree = (CommonTree)adaptor.dupNode(EQUALS5);
+
+
+            root_1 = (CommonTree)adaptor.becomeRoot(EQUALS5_tree, root_1);
+
+
+            match(input, Token.DOWN, null); 
+            _last = (CommonTree)input.LT(1);
+            {
+            CommonTree _save_last_2 = _last;
+            CommonTree _first_2 = null;
+            CommonTree root_2 = (CommonTree)adaptor.nil();
+            _last = (CommonTree)input.LT(1);
+            PLUS6=(CommonTree)match(input,PLUS,FOLLOW_PLUS_in_plustree72); 
+            PLUS6_tree = (CommonTree)adaptor.dupNode(PLUS6);
+
+
+            root_2 = (CommonTree)adaptor.becomeRoot(PLUS6_tree, root_2);
+
+
+            match(input, Token.DOWN, null); 
+            _last = (CommonTree)input.LT(1);
+            pushFollow(FOLLOW_wordtree_in_plustree74);
+            wordtree7=wordtree();
+
+            state._fsp--;
+
+            adaptor.addChild(root_2, wordtree7.getTree());
+
+
+            _last = (CommonTree)input.LT(1);
+            pushFollow(FOLLOW_wordtree_in_plustree76);
+            wordtree8=wordtree();
+
+            state._fsp--;
+
+            adaptor.addChild(root_2, wordtree8.getTree());
+
+
+            match(input, Token.UP, null); 
+            adaptor.addChild(root_1, root_2);
+            _last = _save_last_2;
+            }
+
+
+            _last = (CommonTree)input.LT(1);
+            pushFollow(FOLLOW_wordtree_in_plustree79);
+            wordtree9=wordtree();
+
+            state._fsp--;
+
+            adaptor.addChild(root_1, wordtree9.getTree());
+
+
+            match(input, Token.UP, null); 
+            adaptor.addChild(root_0, root_1);
+            _last = _save_last_1;
+            }
+
+
+            }
+
+            retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+
+        finally {
+        	// do for sure before leaving
+        }
+        return retval;
+    }
+    // $ANTLR end "plustree"
+
+
+    public static class minustree_return extends TreeRuleReturnScope {
+        CommonTree tree;
+        public Object getTree() { return tree; }
+    };
+
+
+    // $ANTLR start "minustree"
+    // /home/slaan/git/cip/testordner/treeWalker.g:15:1: minustree : ^( EQUALS ^( MINUS l1= wordtree l2= wordtree ) l3= wordtree ) -> ^( EQUALS ^( PLUS[\"+\"] $l3 $l2) $l1) ;
+    public final treeWalker.minustree_return minustree() throws RecognitionException {
+        treeWalker.minustree_return retval = new treeWalker.minustree_return();
+        retval.start = input.LT(1);
+
+
+        CommonTree root_0 = null;
+
+        CommonTree _first_0 = null;
+        CommonTree _last = null;
+
+        CommonTree EQUALS10=null;
+        CommonTree MINUS11=null;
+        treeWalker.wordtree_return l1 =null;
+
+        treeWalker.wordtree_return l2 =null;
+
+        treeWalker.wordtree_return l3 =null;
+
+
+        CommonTree EQUALS10_tree=null;
+        CommonTree MINUS11_tree=null;
+        RewriteRuleNodeStream stream_EQUALS=new RewriteRuleNodeStream(adaptor,"token EQUALS");
+        RewriteRuleNodeStream stream_MINUS=new RewriteRuleNodeStream(adaptor,"token MINUS");
+        RewriteRuleSubtreeStream stream_wordtree=new RewriteRuleSubtreeStream(adaptor,"rule wordtree");
+        try {
+            // /home/slaan/git/cip/testordner/treeWalker.g:15:10: ( ^( EQUALS ^( MINUS l1= wordtree l2= wordtree ) l3= wordtree ) -> ^( EQUALS ^( PLUS[\"+\"] $l3 $l2) $l1) )
+            // /home/slaan/git/cip/testordner/treeWalker.g:15:13: ^( EQUALS ^( MINUS l1= wordtree l2= wordtree ) l3= wordtree )
+            {
+            _last = (CommonTree)input.LT(1);
+            {
+            CommonTree _save_last_1 = _last;
+            CommonTree _first_1 = null;
+            CommonTree root_1 = (CommonTree)adaptor.nil();
+            _last = (CommonTree)input.LT(1);
+            EQUALS10=(CommonTree)match(input,EQUALS,FOLLOW_EQUALS_in_minustree92);  
+            stream_EQUALS.add(EQUALS10);
+
+
+            match(input, Token.DOWN, null); 
+            _last = (CommonTree)input.LT(1);
+            {
+            CommonTree _save_last_2 = _last;
+            CommonTree _first_2 = null;
+            CommonTree root_2 = (CommonTree)adaptor.nil();
+            _last = (CommonTree)input.LT(1);
+            MINUS11=(CommonTree)match(input,MINUS,FOLLOW_MINUS_in_minustree95);  
+            stream_MINUS.add(MINUS11);
+
+
+            match(input, Token.DOWN, null); 
+            _last = (CommonTree)input.LT(1);
+            pushFollow(FOLLOW_wordtree_in_minustree99);
+            l1=wordtree();
+
+            state._fsp--;
+
+            stream_wordtree.add(l1.getTree());
+
+            _last = (CommonTree)input.LT(1);
+            pushFollow(FOLLOW_wordtree_in_minustree103);
+            l2=wordtree();
+
+            state._fsp--;
+
+            stream_wordtree.add(l2.getTree());
+
+            match(input, Token.UP, null); 
+            adaptor.addChild(root_1, root_2);
+            _last = _save_last_2;
+            }
+
+
+            _last = (CommonTree)input.LT(1);
+            pushFollow(FOLLOW_wordtree_in_minustree108);
+            l3=wordtree();
+
+            state._fsp--;
+
+            stream_wordtree.add(l3.getTree());
+
+            match(input, Token.UP, null); 
+            adaptor.addChild(root_0, root_1);
+            _last = _save_last_1;
+            }
+
+
+            // AST REWRITE
+            // elements: EQUALS, l3, l1, l2
+            // token labels: 
+            // rule labels: l1, l2, l3, retval
+            // token list labels: 
+            // rule list labels: 
+            // wildcard labels: 
+            retval.tree = root_0;
+            RewriteRuleSubtreeStream stream_l1=new RewriteRuleSubtreeStream(adaptor,"rule l1",l1!=null?l1.tree:null);
+            RewriteRuleSubtreeStream stream_l2=new RewriteRuleSubtreeStream(adaptor,"rule l2",l2!=null?l2.tree:null);
+            RewriteRuleSubtreeStream stream_l3=new RewriteRuleSubtreeStream(adaptor,"rule l3",l3!=null?l3.tree:null);
+            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
+
+            root_0 = (CommonTree)adaptor.nil();
+            // 16:4: -> ^( EQUALS ^( PLUS[\"+\"] $l3 $l2) $l1)
+            {
+                // /home/slaan/git/cip/testordner/treeWalker.g:16:7: ^( EQUALS ^( PLUS[\"+\"] $l3 $l2) $l1)
+                {
+                CommonTree root_1 = (CommonTree)adaptor.nil();
+                root_1 = (CommonTree)adaptor.becomeRoot(
+                stream_EQUALS.nextNode()
+                , root_1);
+
+                // /home/slaan/git/cip/testordner/treeWalker.g:16:16: ^( PLUS[\"+\"] $l3 $l2)
+                {
+                CommonTree root_2 = (CommonTree)adaptor.nil();
+                root_2 = (CommonTree)adaptor.becomeRoot(
+                (CommonTree)adaptor.create(PLUS, "+")
+                , root_2);
+
+                adaptor.addChild(root_2, stream_l3.nextTree());
+
+                adaptor.addChild(root_2, stream_l2.nextTree());
+
+                adaptor.addChild(root_1, root_2);
+                }
+
+                adaptor.addChild(root_1, stream_l1.nextTree());
+
+                adaptor.addChild(root_0, root_1);
+                }
+
+            }
+
+
+            retval.tree = root_0;
+
+            }
+
+            retval.tree = (CommonTree)adaptor.rulePostProcessing(root_0);
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+
+        finally {
+        	// do for sure before leaving
+        }
+        return retval;
+    }
+    // $ANTLR end "minustree"
+
+
     public static class wordtree_return extends TreeRuleReturnScope {
         CommonTree tree;
         public Object getTree() { return tree; }
@@ -505,7 +590,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "wordtree"
-    // /home/slaan/git/cip/testordner/treeWalker.g:14:1: wordtree : '(' 'WORD' ( letters )+ ')' -> ^( 'WORD' ( letters )+ ) ;
+    // /home/slaan/git/cip/testordner/treeWalker.g:18:1: wordtree : ^( WORD ( letters )+ ) ;
     public final treeWalker.wordtree_return wordtree() throws RecognitionException {
         treeWalker.wordtree_return retval = new treeWalker.wordtree_return();
         retval.start = input.LT(1);
@@ -516,56 +601,57 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree _first_0 = null;
         CommonTree _last = null;
 
-        CommonTree char_literal14=null;
-        CommonTree string_literal15=null;
-        CommonTree char_literal17=null;
-        treeWalker.letters_return letters16 =null;
+        CommonTree WORD12=null;
+        treeWalker.letters_return letters13 =null;
 
 
-        CommonTree char_literal14_tree=null;
-        CommonTree string_literal15_tree=null;
-        CommonTree char_literal17_tree=null;
-        RewriteRuleNodeStream stream_38=new RewriteRuleNodeStream(adaptor,"token 38");
-        RewriteRuleNodeStream stream_39=new RewriteRuleNodeStream(adaptor,"token 39");
-        RewriteRuleNodeStream stream_42=new RewriteRuleNodeStream(adaptor,"token 42");
-        RewriteRuleSubtreeStream stream_letters=new RewriteRuleSubtreeStream(adaptor,"rule letters");
+        CommonTree WORD12_tree=null;
+
         try {
-            // /home/slaan/git/cip/testordner/treeWalker.g:15:2: ( '(' 'WORD' ( letters )+ ')' -> ^( 'WORD' ( letters )+ ) )
-            // /home/slaan/git/cip/testordner/treeWalker.g:15:4: '(' 'WORD' ( letters )+ ')'
+            // /home/slaan/git/cip/testordner/treeWalker.g:19:2: ( ^( WORD ( letters )+ ) )
+            // /home/slaan/git/cip/testordner/treeWalker.g:19:4: ^( WORD ( letters )+ )
             {
-            _last = (CommonTree)input.LT(1);
-            char_literal14=(CommonTree)match(input,38,FOLLOW_38_in_wordtree147);  
-            stream_38.add(char_literal14);
+            root_0 = (CommonTree)adaptor.nil();
 
 
             _last = (CommonTree)input.LT(1);
-            string_literal15=(CommonTree)match(input,42,FOLLOW_42_in_wordtree149);  
-            stream_42.add(string_literal15);
+            {
+            CommonTree _save_last_1 = _last;
+            CommonTree _first_1 = null;
+            CommonTree root_1 = (CommonTree)adaptor.nil();
+            _last = (CommonTree)input.LT(1);
+            WORD12=(CommonTree)match(input,WORD,FOLLOW_WORD_in_wordtree143); 
+            WORD12_tree = (CommonTree)adaptor.dupNode(WORD12);
 
 
-            // /home/slaan/git/cip/testordner/treeWalker.g:15:15: ( letters )+
+            root_1 = (CommonTree)adaptor.becomeRoot(WORD12_tree, root_1);
+
+
+            match(input, Token.DOWN, null); 
+            // /home/slaan/git/cip/testordner/treeWalker.g:19:11: ( letters )+
             int cnt3=0;
             loop3:
             do {
                 int alt3=2;
                 int LA3_0 = input.LA(1);
 
-                if ( ((LA3_0 >= A_LET && LA3_0 <= B_LET)||(LA3_0 >= C_LET && LA3_0 <= D_LET)||(LA3_0 >= E_LET && LA3_0 <= L_LET)||(LA3_0 >= M_LET && LA3_0 <= O_LET)||(LA3_0 >= P_LET && LA3_0 <= V_LET)||(LA3_0 >= W_LET && LA3_0 <= Z_LET)) ) {
+                if ( (LA3_0==BUCHSTABEN) ) {
                     alt3=1;
                 }
 
 
                 switch (alt3) {
             	case 1 :
-            	    // /home/slaan/git/cip/testordner/treeWalker.g:15:15: letters
+            	    // /home/slaan/git/cip/testordner/treeWalker.g:19:11: letters
             	    {
             	    _last = (CommonTree)input.LT(1);
-            	    pushFollow(FOLLOW_letters_in_wordtree151);
-            	    letters16=letters();
+            	    pushFollow(FOLLOW_letters_in_wordtree145);
+            	    letters13=letters();
 
             	    state._fsp--;
 
-            	    stream_letters.add(letters16.getTree());
+            	    adaptor.addChild(root_1, letters13.getTree());
+
 
             	    }
             	    break;
@@ -580,47 +666,11 @@ public TreeAdaptor getTreeAdaptor() {
             } while (true);
 
 
-            _last = (CommonTree)input.LT(1);
-            char_literal17=(CommonTree)match(input,39,FOLLOW_39_in_wordtree154);  
-            stream_39.add(char_literal17);
-
-
-            // AST REWRITE
-            // elements: letters, 42
-            // token labels: 
-            // rule labels: retval
-            // token list labels: 
-            // rule list labels: 
-            // wildcard labels: 
-            retval.tree = root_0;
-            RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.tree:null);
-
-            root_0 = (CommonTree)adaptor.nil();
-            // 15:28: -> ^( 'WORD' ( letters )+ )
-            {
-                // /home/slaan/git/cip/testordner/treeWalker.g:15:31: ^( 'WORD' ( letters )+ )
-                {
-                CommonTree root_1 = (CommonTree)adaptor.nil();
-                root_1 = (CommonTree)adaptor.becomeRoot(
-                stream_42.nextNode()
-                , root_1);
-
-                if ( !(stream_letters.hasNext()) ) {
-                    throw new RewriteEarlyExitException();
-                }
-                while ( stream_letters.hasNext() ) {
-                    adaptor.addChild(root_1, stream_letters.nextTree());
-
-                }
-                stream_letters.reset();
-
-                adaptor.addChild(root_0, root_1);
-                }
-
+            match(input, Token.UP, null); 
+            adaptor.addChild(root_0, root_1);
+            _last = _save_last_1;
             }
 
-
-            retval.tree = root_0;
 
             }
 
@@ -647,7 +697,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
     // $ANTLR start "letters"
-    // /home/slaan/git/cip/testordner/treeWalker.g:17:1: letters : ( A_LET | B_LET | C_LET | D_LET | E_LET | F_LET | G_LET | H_LET | I_LET | J_LET | K_LET | L_LET | M_LET | N_LET | O_LET | P_LET | Q_LET | R_LET | S_LET | T_LET | U_LET | V_LET | W_LET | X_LET | Y_LET | Z_LET ) ;
+    // /home/slaan/git/cip/testordner/treeWalker.g:21:1: letters : ( BUCHSTABEN )+ ;
     public final treeWalker.letters_return letters() throws RecognitionException {
         treeWalker.letters_return retval = new treeWalker.letters_return();
         retval.start = input.LT(1);
@@ -658,35 +708,53 @@ public TreeAdaptor getTreeAdaptor() {
         CommonTree _first_0 = null;
         CommonTree _last = null;
 
-        CommonTree set18=null;
+        CommonTree BUCHSTABEN14=null;
 
-        CommonTree set18_tree=null;
+        CommonTree BUCHSTABEN14_tree=null;
 
         try {
-            // /home/slaan/git/cip/testordner/treeWalker.g:17:9: ( ( A_LET | B_LET | C_LET | D_LET | E_LET | F_LET | G_LET | H_LET | I_LET | J_LET | K_LET | L_LET | M_LET | N_LET | O_LET | P_LET | Q_LET | R_LET | S_LET | T_LET | U_LET | V_LET | W_LET | X_LET | Y_LET | Z_LET ) )
-            // /home/slaan/git/cip/testordner/treeWalker.g:
+            // /home/slaan/git/cip/testordner/treeWalker.g:21:9: ( ( BUCHSTABEN )+ )
+            // /home/slaan/git/cip/testordner/treeWalker.g:21:11: ( BUCHSTABEN )+
             {
             root_0 = (CommonTree)adaptor.nil();
 
 
-            _last = (CommonTree)input.LT(1);
-            set18=(CommonTree)input.LT(1);
+            // /home/slaan/git/cip/testordner/treeWalker.g:21:11: ( BUCHSTABEN )+
+            int cnt4=0;
+            loop4:
+            do {
+                int alt4=2;
+                int LA4_0 = input.LA(1);
 
-            if ( (input.LA(1) >= A_LET && input.LA(1) <= B_LET)||(input.LA(1) >= C_LET && input.LA(1) <= D_LET)||(input.LA(1) >= E_LET && input.LA(1) <= L_LET)||(input.LA(1) >= M_LET && input.LA(1) <= O_LET)||(input.LA(1) >= P_LET && input.LA(1) <= V_LET)||(input.LA(1) >= W_LET && input.LA(1) <= Z_LET) ) {
-                input.consume();
-                set18_tree = (CommonTree)adaptor.dupNode(set18);
+                if ( (LA4_0==BUCHSTABEN) ) {
+                    alt4=1;
+                }
 
 
-                adaptor.addChild(root_0, set18_tree);
+                switch (alt4) {
+            	case 1 :
+            	    // /home/slaan/git/cip/testordner/treeWalker.g:21:11: BUCHSTABEN
+            	    {
+            	    _last = (CommonTree)input.LT(1);
+            	    BUCHSTABEN14=(CommonTree)match(input,BUCHSTABEN,FOLLOW_BUCHSTABEN_in_letters155); 
+            	    BUCHSTABEN14_tree = (CommonTree)adaptor.dupNode(BUCHSTABEN14);
 
-                state.errorRecovery=false;
-            }
-            else {
-                MismatchedSetException mse = new MismatchedSetException(null,input);
-                throw mse;
-            }
 
-             
+            	    adaptor.addChild(root_0, BUCHSTABEN14_tree);
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    if ( cnt4 >= 1 ) break loop4;
+                        EarlyExitException eee =
+                            new EarlyExitException(4, input);
+                        throw eee;
+                }
+                cnt4++;
+            } while (true);
+
 
             }
 
@@ -710,28 +778,22 @@ public TreeAdaptor getTreeAdaptor() {
 
  
 
-    public static final BitSet FOLLOW_subtree_in_start31 = new BitSet(new long[]{0x0000004000000002L});
-    public static final BitSet FOLLOW_38_in_subtree40 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_EQUALS_in_subtree42 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_subtree44 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_subtree46 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_wordtree_in_subtree50 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_wordtree_in_subtree54 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_subtree56 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_wordtree_in_subtree60 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_subtree63 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_subtree91 = new BitSet(new long[]{0x0000000000000400L});
-    public static final BitSet FOLLOW_EQUALS_in_subtree93 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_subtree95 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_41_in_subtree97 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_wordtree_in_subtree101 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_wordtree_in_subtree105 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_subtree107 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_wordtree_in_subtree111 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_subtree114 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_38_in_wordtree147 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_42_in_wordtree149 = new BitSet(new long[]{0x0000003CFEEFF360L});
-    public static final BitSet FOLLOW_letters_in_wordtree151 = new BitSet(new long[]{0x000000BCFEEFF360L});
-    public static final BitSet FOLLOW_39_in_wordtree154 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_PUZZLE_in_start37 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_subtree_in_start39 = new BitSet(new long[]{0x0000000000000088L});
+    public static final BitSet FOLLOW_plustree_in_subtree58 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_minustree_in_subtree60 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_EQUALS_in_plustree69 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_PLUS_in_plustree72 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_wordtree_in_plustree74 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_wordtree_in_plustree76 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_wordtree_in_plustree79 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_EQUALS_in_minustree92 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_MINUS_in_minustree95 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_wordtree_in_minustree99 = new BitSet(new long[]{0x0000000000001000L});
+    public static final BitSet FOLLOW_wordtree_in_minustree103 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_wordtree_in_minustree108 = new BitSet(new long[]{0x0000000000000008L});
+    public static final BitSet FOLLOW_WORD_in_wordtree143 = new BitSet(new long[]{0x0000000000000004L});
+    public static final BitSet FOLLOW_letters_in_wordtree145 = new BitSet(new long[]{0x0000000000000028L});
+    public static final BitSet FOLLOW_BUCHSTABEN_in_letters155 = new BitSet(new long[]{0x0000000000000022L});
 
 }
