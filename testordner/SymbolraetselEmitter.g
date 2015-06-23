@@ -4,28 +4,49 @@ options {
   output       = template;
   ASTLabelType = CommonTree;
 }
-
-puzzle
+@header {
+import java.util.Set;
+import java.util.HashSet;
+import java.lang.Character;
+}
+puzzle returns [Set<String> symbole, Set<String> constraints]
   :
-  ^(PUZZLE constraints+=constraint*)
-  -> sums(sums={$constraints})
+  ^(PUZZLE part1=constraint part2=constraint part3=constraint part4=constraint part5=constraint part6=constraint)  
+	{
+	$symbole = new HashSet<>();
+	$constraints = new HashSet<>();
+	
+	$symbole.addAll($part1.constraints);
+	$symbole.addAll($part2.constraints);
+	$symbole.addAll($part3.constraints);
+	$symbole.addAll($part4.constraints);
+	$symbole.addAll($part5.constraints);
+	$symbole.addAll($part6.constraints);
+	
+	$constraints.add($part1.st.toString());
+	$constraints.add($part2.st.toString());
+	$constraints.add($part3.st.toString());
+	$constraints.add($part4.st.toString());
+	$constraints.add($part5.st.toString());
+	$constraints.add($part6.st.toString());
+	}
+
+  -> sums(symbols={$symbole},sums={$constraints})
   ;
 
-constraint
-@after {
-Constraint constraint = new Constraint();
-constraint.numbers.add($n1.number);
-constraint.numbers.add($n2.number);
-constraint.numbers.add($n3.number);
-constraint.prepare();
-}
+constraint returns [Set<String> constraints]
+  @after {
+  	$constraints = new HashSet<String>();
+    	$constraints.addAll(n1.number.getCharacters());
+   	$constraints.addAll(n2.number.getCharacters());
+    	$constraints.addAll(n3.number.getCharacters());  	    	
+  }
   :
   ^(
     EQUALS
-    ^(PLUS n1=number n2=number)
-    n3=number
-   )
-   -> sum(number1={$n1.number}, number2={$n2.number}, number3={$n3.number})
+    ^(PLUS n1=number n2=number)  n3=number  )
+    
+   -> sum(number1={$n1.number}, number2={$n2.number}, erg={$n3.number})
   ;
 
 number returns [Number number]

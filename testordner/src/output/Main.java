@@ -5,11 +5,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.antlr.runtime.ANTLRInputStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.antlr.runtime.tree.Tree;
 import org.antlr.stringtemplate.StringTemplateGroup;
@@ -54,9 +56,10 @@ public class Main {
 		String output = puzzle_return.getTemplate().toString();
 		System.out.println("\n\nausgabe");
 		System.out.println(output);
-
-
-//
+		Path relative = Paths.get("Chocobo.java");
+		Path absolut = relative.toAbsolutePath();
+		System.out.println(absolut);
+		Files.write(Paths.get("Chocobo.java"), output.getBytes());
 	}
 
 }

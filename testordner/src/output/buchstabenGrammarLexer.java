@@ -1,6 +1,6 @@
 package output;
 
-// $ANTLR 3.4 /home/slaan/git/cip/testordner/buchstabenGrammar.g 2015-06-22 16:29:40
+// $ANTLR 3.4 /home/slaan/git/cip/testordner/buchstabenGrammar.g 2015-06-23 18:24:01
 
 import org.antlr.runtime.*;
 import java.util.Stack;

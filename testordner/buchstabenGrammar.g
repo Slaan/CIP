@@ -10,17 +10,17 @@ tokens {
 }
 
 start_all
-	:	wort1=word arithexpr wort2=word EQUALS wort3=word
-		arithexpr arithexpr arithexpr
-		wort4=word arithexpr wort5=word EQUALS wort6=word
+	:	wort1=word a1=arithexpr wort2=word EQUALS wort3=word
+		a2=arithexpr a3=arithexpr a4=arithexpr
+		wort4=word a5=arithexpr wort5=word EQUALS wort6=word
 		EQUALS EQUALS EQUALS
-		wort7=word arithexpr wort8=word EQUALS wort9=word
-		-> ^(PUZZLE ^(EQUALS ^(arithexpr $wort1 $wort2) $wort3)
-		^(EQUALS ^(arithexpr $wort4 $wort5) $wort6)
-		^(EQUALS ^(arithexpr $wort7 $wort8) $wort9)
-		^(EQUALS ^(arithexpr $wort1 $wort4) $wort7)
-		^(EQUALS ^(arithexpr $wort2 $wort5) $wort8)
-		^(EQUALS ^(arithexpr $wort3 $wort6) $wort9))
+		wort7=word a6=arithexpr wort8=word EQUALS wort9=word
+		-> ^(PUZZLE ^(EQUALS ^($a1 $wort1 $wort2) $wort3)
+		^(EQUALS ^($a5 $wort4 $wort5) $wort6)
+		^(EQUALS ^($a6 $wort7 $wort8) $wort9)
+		^(EQUALS ^($a2 $wort1 $wort4) $wort7)
+		^(EQUALS ^($a3 $wort2 $wort5) $wort8)
+		^(EQUALS ^($a4 $wort3 $wort6) $wort9))
 		;
 
 start 	: 	calcarithexpr equalsmultexpr calcZeile -> ^(EQUALSMULTT calcarithexpr calcZeile);

@@ -1,4 +1,4 @@
-// $ANTLR 3.4 /home/slaan/git/cip/testordner/treeWalker.g 2015-06-22 16:30:23
+// $ANTLR 3.4 /home/slaan/git/cip/testordner/treeWalker.g 2015-06-23 18:24:13
 
 import org.antlr.runtime.*;
 import org.antlr.runtime.tree.*;
@@ -519,7 +519,7 @@ public TreeAdaptor getTreeAdaptor() {
 
 
             // AST REWRITE
-            // elements: EQUALS, l3, l1, l2
+            // elements: EQUALS, l1, l3, l2
             // token labels: 
             // rule labels: l1, l2, l3, retval
             // token list labels: 
