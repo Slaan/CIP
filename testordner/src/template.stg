@@ -86,7 +86,6 @@ public class Chocobo {
 }
 >>
 
-
 sum(number1, number2, erg) ::= <<
 stuff(
 Arrays.asList(<number1.characters; separator=", ">), 
